@@ -1,12 +1,12 @@
 module ContadorN_tb;
 
     // Parámetros del testbench
-    parameter N = 6; // Número de bits del contador
+    parameter N = 2; // Número de bits del contador
 
     // Variables del testbench
     logic clk = 0;
     logic rst = 0;
-    logic [N-1:0] valor_inicial = 9; // Valor inicial para el contador
+    logic [N-1:0] valor_inicial = 3; // Valor inicial para el contador
     logic [N-1:0] contador;
 
     // Instancia del contador

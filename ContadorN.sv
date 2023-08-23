@@ -6,7 +6,7 @@ module ContadorN(
 );
 
     // Parámetros
-    parameter N = 6; // Número de bits del contador
+    parameter N = 2; // Número de bits del contador
 
     // Variables internas
     logic [N-1:0] reg_contador;
