@@ -1,0 +1,22 @@
+module CountdownCounter (
+    input logic clk,
+    input logic reset,
+    input logic [N-1:0] load_value,
+    output logic [N-1:0] count_value
+);
+    parameter N = 8;  // Número de bits del contador
+    
+    logic [N-1:0] counter;
+
+    always_ff @(posedge clk or posedge reset) begin
+        if (reset)
+            counter <= 0;
+        else if (load_value != counter)
+            counter <= load_value;
+        else if (counter != 0)
+            counter <= counter - 1;
+    end
+
+    assign count_value = counter;
+
+endmodule
