@@ -20,7 +20,7 @@ module Contador6b_tb;
 
     // Simulación del testbench
     initial begin
-        $display("Comenzando simulación para un contador regresivo de %0d bits...", N);
+        $display("Comenzando simulaciOn para un contador regresivo de %0d bits...", N);
 
         rst = 1; // Activa el reset inicialmente
         #10 rst = 0; // Desactiva el reset
@@ -31,7 +31,7 @@ module Contador6b_tb;
         // Verificación automática de resultados
         if (contador !== 6'h00) $error("Fallo de aserción para contador regresivo de 6 bits");
 
-        $display("Simulación finalizada para un contador regresivo de %0d bits.", N);
+        $display("SimulaciOn finalizada para un contador regresivo de %0d bits.", N);
         $finish;
     end
 
