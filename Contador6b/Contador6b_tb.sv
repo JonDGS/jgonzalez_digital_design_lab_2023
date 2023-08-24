@@ -28,10 +28,10 @@ module Contador6b_tb;
         // Simula durante 64 unidades de tiempo para contar hasta 0
         repeat (64) @(posedge clk);
 
-        // Verificación automática de resultados
+        // Verificacion automática de resultados
         if (contador !== 6'h00) $error("Fallo de aserción para contador regresivo de 6 bits");
 
-        $display("SimulaciOn finalizada para un contador regresivo de %0d bits.", N);
+        $display("Simulacion finalizada para un contador regresivo de %0d bits.", N);
         $finish;
     end
 

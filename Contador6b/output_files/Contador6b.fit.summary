@@ -1,13 +1,13 @@
-Fitter Status : Successful - Wed Aug 23 14:08:13 2023
+Fitter Status : Successful - Thu Aug 24 14:47:47 2023
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : Contador6b
 Top-level Entity Name : Contador6b
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 7 / 32,070 ( < 1 % )
+Logic utilization (in ALMs) : 12 / 32,070 ( < 1 % )
 Total registers : 11
-Total pins : 22 / 457 ( 5 % )
+Total pins : 16 / 457 ( 4 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )
 Total RAM Blocks : 0 / 397 ( 0 % )

@@ -11,15 +11,15 @@ cModel Technology
 Z0 dC:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Contador6b/simulation/modelsim
 vContador6b
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1692828167
+Z2 !s110 1692906010
 !i10b 1
-!s100 eHRkD01z`h^Q3b[YNCTbM1
+!s100 mQDk;?58<;R8<mXJOkHj31
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IkE6L90MJBW]3[U7eASTXC1
+IV[oXEhaJlOWfizAWTW7]I0
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1692826391
+w1692905978
 8C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Contador6b/Contador6b.sv
 FC:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Contador6b/Contador6b.sv
 !i122 0
@@ -28,7 +28,7 @@ Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1692828167.000000
+Z6 !s108 1692906010.000000
 !s107 C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Contador6b/Contador6b.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Contador6b|C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Contador6b/Contador6b.sv|
 !i113 1
@@ -40,13 +40,13 @@ vContador6b_tb
 R1
 R2
 !i10b 1
-!s100 kMKd[j<cGaO:9P@WKP5mS1
+!s100 PK]Zk8Y=02?3abRZFzn0;1
 R3
-Ib0FHB<QW6mhSQ3f3JDABO2
+I_2IY]FFFXj=d@fHKmQY?a3
 R4
 S1
 R0
-w1692828145
+w1692905979
 8C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Contador6b/Contador6b_tb.sv
 FC:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Contador6b/Contador6b_tb.sv
 !i122 1

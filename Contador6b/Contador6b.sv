@@ -1,8 +1,8 @@
 module Contador6b(
     input logic clk,
     input logic rst,
-    output logic [5:0] contador,
-    output logic [6:0] display1, //unidades
+	 //output logic [5:0] contador, //Se quita el comentario para realizar el testbench
+    output logic [6:0] display1,  //unidades
     output logic [6:0] display2  //decenas
 );
 
@@ -13,7 +13,7 @@ module Contador6b(
     // Contador regresivo con reset asíncrono
     always_ff @(posedge clk or posedge rst) begin
         if (rst)
-            reg_contador <= 6'b111111;
+            reg_contador <= 6'b110011;
         else if (reg_contador != 6'b000000)
             reg_contador <= reg_contador - 1;
     end
@@ -65,7 +65,7 @@ module Contador6b(
         endcase
     end
 
-    assign contador = reg_contador;
+    //assign contador = reg_contador;  //Se quita el comentario para realizar el testbench
 
 endmodule
 

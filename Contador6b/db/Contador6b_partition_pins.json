@@ -4,75 +4,55 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "contador[0]",
+					"name" : "display1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "contador[1]",
+					"name" : "display1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "contador[2]",
+					"name" : "display1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "contador[3]",
+					"name" : "display1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "contador[4]",
+					"name" : "display1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "contador[5]",
+					"name" : "display1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "a1",
+					"name" : "display1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "b1",
+					"name" : "display2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "c1",
+					"name" : "display2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "d1",
+					"name" : "display2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "e1",
+					"name" : "display2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "f1",
+					"name" : "display2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "a2",
-					"strict" : false
-				},
-				{
-					"name" : "b2",
-					"strict" : false
-				},
-				{
-					"name" : "c2",
-					"strict" : false
-				},
-				{
-					"name" : "d2",
-					"strict" : false
-				},
-				{
-					"name" : "e2",
-					"strict" : false
-				},
-				{
-					"name" : "f2",
+					"name" : "display2[6]",
 					"strict" : false
 				},
 				{
