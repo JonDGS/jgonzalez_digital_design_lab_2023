@@ -1,0 +1,127 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/simulation/modelsim
+Efourbitadder
+Z1 w1692819760
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/fourBitAdder.vhd
+Z5 FE:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/fourBitAdder.vhd
+l0
+L4
+V250?z4R^;Q:`EY]Y^WW`01
+!s100 o<;<ocm;FmJjJ8Qem[B>V0
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1692842989
+!i10b 1
+Z8 !s108 1692842989.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/fourBitAdder.vhd|
+Z10 !s107 E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/fourBitAdder.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Astruct
+R2
+R3
+DEx4 work 12 fourbitadder 0 22 250?z4R^;Q:`EY]Y^WW`01
+l25
+L13
+V2[Sin2m@ZC1I:3]541[n`1
+!s100 Ce=jgegODL`ddl]`z_;oo1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Efourbitadder_tb
+Z13 w1692820104
+R2
+R3
+R0
+Z14 8E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/fourBitAdder_tb.vhd
+Z15 FE:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/fourBitAdder_tb.vhd
+l0
+L4
+V?=YGWP4S<8=C^jGoAVlnS0
+!s100 c4blcobNVdgUc41<>zdOC3
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/fourBitAdder_tb.vhd|
+Z17 !s107 E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/fourBitAdder_tb.vhd|
+!i113 1
+R11
+R12
+Asim
+R2
+R3
+DEx4 work 15 fourbitadder_tb 0 22 ?=YGWP4S<8=C^jGoAVlnS0
+l22
+L7
+V4>Sg7_MIkHTbbDN]o>nc[1
+!s100 781>^lR2kiVj3IYnUNnaS2
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Efulladdermodule
+Z18 w1692818646
+R2
+R3
+R0
+Z19 8E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/fullAdderModule.vhd
+Z20 FE:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/fullAdderModule.vhd
+l0
+L4
+ViURHWW_O`obRQ_R2HJO=03
+!s100 hXDTmbBF>KBno6zK]OAEI3
+R6
+31
+R7
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-93|-work|work|E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/fullAdderModule.vhd|
+Z22 !s107 E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Problema2/fullAdderModule.vhd|
+!i113 1
+R11
+R12
+Abhv
+R2
+R3
+DEx4 work 15 fulladdermodule 0 22 iURHWW_O`obRQ_R2HJO=03
+l11
+L10
+VaRd@BcYW<o8E:gT3T@VV10
+!s100 5niJocJ`fFQKg37aC=feb3
+R6
+31
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12
