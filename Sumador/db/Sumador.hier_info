@@ -12,11 +12,11 @@ K => Tmp[1].IN1
 K => Tmp[2].IN1
 K => Tmp[3].IN1
 K => fullAdderModule:fA0.Cin
-S[0] <= fullAdderModule:fA0.S
-S[1] <= fullAdderModule:fA1.S
-S[2] <= fullAdderModule:fA2.S
-S[3] <= fullAdderModule:fA3.S
-Cout <= fullAdderModule:fA3.Cout
+S[0] << fullAdderModule:fA0.S
+S[1] << fullAdderModule:fA1.S
+S[2] << fullAdderModule:fA2.S
+S[3] << fullAdderModule:fA3.S
+Cout << fullAdderModule:fA3.Cout
 
 
 |fourBitAdder|fullAdderModule:fA0

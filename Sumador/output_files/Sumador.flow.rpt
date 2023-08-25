@@ -1,5 +1,5 @@
 Flow report for Sumador
-Wed Aug 23 19:14:08 2023
+Thu Aug 24 20:44:12 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Wed Aug 23 19:14:08 2023       ;
+; Flow Status                 ; Successful - Thu Aug 24 20:44:12 2023       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; Sumador                                     ;
 ; Top-level Entity Name       ; fourBitAdder                                ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/23/2023 19:14:00 ;
+; Start date & time ; 08/24/2023 20:44:05 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Sumador             ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name  ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 233497588804601.169283964021740        ; --            ; --           ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 233497588804601.169293144527592        ; --            ; --           ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --           ; fourBitAdder_tb                   ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --           ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --           ; eda_board_design_boundary_scan    ;
@@ -105,8 +105,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:08     ; 1.0                     ; 4835 MB             ; 00:00:09                           ;
-; Total                  ; 00:00:08     ; --                      ; --                  ; 00:00:09                           ;
+; Analysis & Elaboration ; 00:00:07     ; 1.0                     ; 4840 MB             ; 00:00:09                           ;
+; Total                  ; 00:00:07     ; --                      ; --                  ; 00:00:09                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
