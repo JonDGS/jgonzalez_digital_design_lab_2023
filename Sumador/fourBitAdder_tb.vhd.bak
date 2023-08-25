@@ -1,0 +1,32 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity fourBitAdder_tb is
+end fourBitAdder_tb;
+
+architecture sim of fourBitAdder_tb is
+  component fourBitAdder
+    port (A, B : in std_logic_vector(3 downto 0);
+          K : in std_logic;
+			 S : out std_logic_vector(3 downto 0);
+			 Cout : out std_logic
+			 );
+  end component;
+
+  signal A : std_logic_vector(3 downto 0) := "1001";
+  signal B : std_logic_vector(3 downto 0) := "1101";
+  
+  
+begin
+  uut: and_gate port map (a => a, b => b, c => c);
+
+  stimulus: process
+  begin
+    a <= '0'; b <= '0'; wait for 10 ns;
+    a <= '0'; b <= '1'; wait for 10 ns;
+    a <= '1'; b <= '0'; wait for 10 ns;
+    a <= '1'; b <= '1'; wait for 10 ns;
+    wait;
+  end process;
+
+end sim;
