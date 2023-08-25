@@ -1,5 +1,5 @@
 Analysis & Elaboration report for Laboratorio_2
-Wed Aug 23 19:22:26 2023
+Thu Aug 24 20:04:34 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                 ;
 +-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Wed Aug 23 19:22:26 2023          ;
+; Analysis & Elaboration Status ; Successful - Thu Aug 24 20:04:34 2023          ;
 ; Quartus Prime Version         ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                 ; Laboratorio_2                                  ;
 ; Top-level Entity Name         ; bin_bcd_deco                                   ;
@@ -162,27 +162,27 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Wed Aug 23 19:22:19 2023
+    Info: Processing started: Thu Aug 24 20:04:24 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Laboratorio_2 -c Laboratorio_2 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file bin_bcd_deco.sv
-    Info (12023): Found entity 1: bin_bcd_deco File: C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/CODE/bin_bcd_deco.sv Line: 1
+    Info (12023): Found entity 1: bin_bcd_deco File: C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/jgonzalez_digital_design_lab_2023/Decoder/bin_bcd_deco.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file bin_bcd_deco_tb.sv
-    Info (12023): Found entity 1: bin_bcd_deco_tb File: C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/CODE/bin_bcd_deco_tb.sv Line: 1
+    Info (12023): Found entity 1: bin_bcd_deco_tb File: C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/jgonzalez_digital_design_lab_2023/Decoder/bin_bcd_deco_tb.sv Line: 1
 Info (12127): Elaborating entity "bin_bcd_deco" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at bin_bcd_deco.sv(30): truncated value with size 32 to match size of target (4) File: C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/CODE/bin_bcd_deco.sv Line: 30
-Info (144001): Generated suppressed messages file C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/CODE/output_files/Laboratorio_2.map.smsg
+Warning (10230): Verilog HDL assignment warning at bin_bcd_deco.sv(30): truncated value with size 32 to match size of target (4) File: C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/jgonzalez_digital_design_lab_2023/Decoder/bin_bcd_deco.sv Line: 30
+Info (144001): Generated suppressed messages file C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/jgonzalez_digital_design_lab_2023/Decoder/output_files/Laboratorio_2.map.smsg
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4787 megabytes
-    Info: Processing ended: Wed Aug 23 19:22:26 2023
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 4791 megabytes
+    Info: Processing ended: Thu Aug 24 20:04:34 2023
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:14
 
 
 +--------------------------------------------+
 ; Analysis & Elaboration Suppressed Messages ;
 +--------------------------------------------+
-The suppressed messages can be found in C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/CODE/output_files/Laboratorio_2.map.smsg.
+The suppressed messages can be found in C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/jgonzalez_digital_design_lab_2023/Decoder/output_files/Laboratorio_2.map.smsg.
 
 

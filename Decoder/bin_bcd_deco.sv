@@ -36,7 +36,7 @@ module bin_bcd_deco (
 				
         end 
 		  
-		  
+	// Estructura para asignación de display
 	always @(bcd)
 		begin
 			case(bcd)

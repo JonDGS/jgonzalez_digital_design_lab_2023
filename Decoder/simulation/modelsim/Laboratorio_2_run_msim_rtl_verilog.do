@@ -45,9 +45,9 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -sv -work work +incdir+C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/CODE {C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/CODE/bin_bcd_deco.sv}
+vlog -sv -work work +incdir+C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/jgonzalez_digital_design_lab_2023/Decoder {C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/jgonzalez_digital_design_lab_2023/Decoder/bin_bcd_deco.sv}
 
-vlog -sv -work work +incdir+C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/CODE {C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/CODE/bin_bcd_deco_tb.sv}
+vlog -sv -work work +incdir+C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/jgonzalez_digital_design_lab_2023/Decoder {C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/LAB_2/jgonzalez_digital_design_lab_2023/Decoder/bin_bcd_deco_tb.sv}
 
 vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  bin_bcd_deco_tb
 
