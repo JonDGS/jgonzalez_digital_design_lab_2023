@@ -2,20 +2,21 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+--Module for adding 2 four bit binaries
 entity fourBitAdder is
 	port(
-			A, B : in std_logic_vector(3 downto 0);
-			K : in std_logic;
-			S : out std_logic_vector(3 downto 0);
-			Cout : out std_logic
+			A, B : in std_logic_vector(3 downto 0);-- binaries of inputs
+			K : in std_logic;-- flag for negative
+			S : out std_logic_vector(3 downto 0);-- output for result
+			Cout : out std_logic-- carry  out for result
 			);
 end fourBitAdder;
 
 architecture struct of fourBitAdder is
 	component fullAdderModule is
 		port(
-				A, B, Cin : in std_logic;
-				S, Cout : out std_logic
+				A, B, Cin : in std_logic;-- binaries for inputs and carry in
+				S, Cout : out std_logic-- binaries for output and carry out
 				);
 	end component;
 	--signal A, B, Cin : std_logic;

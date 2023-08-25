@@ -1,6 +1,6 @@
 Flow report for Sumador
-Thu Aug 24 22:22:02 2023
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Fri Aug 25 10:58:40 2023
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
 ---------------------
@@ -21,7 +21,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2023  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,29 +38,24 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Aug 24 22:22:02 2023       ;
-; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
-; Revision Name                   ; Sumador                                     ;
-; Top-level Entity Name           ; mainAdderModule                             ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CSEMA5F31C6                                ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 98 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 23 / 457 ( 5 % )                            ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
-+---------------------------------+---------------------------------------------+
++------------------------------------------------------------------------------+
+; Flow Summary                                                                 ;
++-----------------------------+------------------------------------------------+
+; Flow Status                 ; Successful - Fri Aug 25 10:58:40 2023          ;
+; Quartus Prime Version       ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name               ; Sumador                                        ;
+; Top-level Entity Name       ; mainAdderModule                                ;
+; Family                      ; Cyclone V                                      ;
+; Device                      ; 5CSEMA5F31C6                                   ;
+; Timing Models               ; Final                                          ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
+; Total registers             ; N/A until Partition Merge                      ;
+; Total pins                  ; N/A until Partition Merge                      ;
+; Total virtual pins          ; N/A until Partition Merge                      ;
+; Total block memory bits     ; N/A until Partition Merge                      ;
+; Total PLLs                  ; N/A until Partition Merge                      ;
+; Total DLLs                  ; N/A until Partition Merge                      ;
++-----------------------------+------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/24/2023 22:20:52 ;
+; Start date & time ; 08/25/2023 10:58:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Sumador             ;
 +-------------------+---------------------+
@@ -79,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-----------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name     ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-----------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 233497588804601.169293725213980        ; --            ; --              ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 277848889492005.169298271008116        ; --            ; --              ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --              ; mainAdderModule_tb                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --              ; fourBitAdder_tb                   ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --              ; eda_board_design_timing           ;
@@ -109,41 +104,29 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-----------------+-----------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 4892 MB             ; 00:00:09                           ;
-; Fitter               ; 00:00:39     ; 1.0                     ; 7830 MB             ; 00:01:24                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4847 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.3                     ; 5288 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4728 MB             ; 00:00:01                           ;
-; Total                ; 00:01:08     ; --                      ; --                  ; 00:01:41                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                          ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Elaboration ; 00:00:10     ; 1.0                     ; 4845 MB             ; 00:00:14                           ;
+; Total                  ; 00:00:10     ; --                      ; --                  ; 00:00:14                           ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; JonGs_Desktop    ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; JonGs_Desktop    ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; JonGs_Desktop    ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; JonGs_Desktop    ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; JonGs_Desktop    ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++------------------------+------------------+------------+------------+----------------+
+; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++------------------------+------------------+------------+------------+----------------+
+; Analysis & Elaboration ; JonGs_ThinkBook  ; Windows 10 ; 10.0       ; x86_64         ;
++------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off Sumador -c Sumador
-quartus_fit --read_settings_files=off --write_settings_files=off Sumador -c Sumador
-quartus_asm --read_settings_files=off --write_settings_files=off Sumador -c Sumador
-quartus_sta Sumador -c Sumador
-quartus_eda --read_settings_files=off --write_settings_files=off Sumador -c Sumador
+quartus_map --read_settings_files=on --write_settings_files=off Sumador -c Sumador --analysis_and_elaboration
 
 
 

@@ -2,9 +2,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+--Module for converting single digit to 7seg
 entity nDCModule is 
-	port( num : in integer;
-			code : out std_logic_vector(6 downto 0)
+	port( num : in integer;-- number being converted
+			code : out std_logic_vector(6 downto 0)-- code for number in 7seg
 			);
 	end nDCModule;
 	

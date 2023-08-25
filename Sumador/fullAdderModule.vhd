@@ -3,8 +3,8 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity fullAdderModule is 
-	port( A, B, Cin : in std_logic;
-			S, Cout : out std_logic
+	port( A, B, Cin : in std_logic;-- binaries for inputs and carry in
+			S, Cout : out std_logic-- binaries for output and carry out
 			);
 	end fullAdderModule;
 	
