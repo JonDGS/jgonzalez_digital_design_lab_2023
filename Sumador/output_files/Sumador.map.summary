@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Thu Aug 24 20:44:12 2023
+Analysis & Elaboration Status : Successful - Thu Aug 24 21:47:36 2023
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : Sumador
-Top-level Entity Name : fourBitAdder
+Top-level Entity Name : mainAdderModule
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge

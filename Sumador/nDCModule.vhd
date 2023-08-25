@@ -36,6 +36,8 @@ architecture bhv of nDCModule is
 						code <= "0000000";
 					when 9 =>
 						code <= "0010000";
+					when others =>
+						code <= "1111111";
 				end case;
 			end process;
 		end;

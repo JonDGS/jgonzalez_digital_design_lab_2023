@@ -1,134 +1,256 @@
 m255
 K4
 z2
-!s11e vcom 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dD:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/simulation/modelsim
+Z0 dE:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/simulation/modelsim
 Efourbitadder
-Z1 w1692910128
-Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 1
+Z1 w1692923316
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z4 8D:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder.vhd
-Z5 FD:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder.vhd
+Z5 8E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder.vhd
+Z6 FE:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder.vhd
 l0
-L4 1
-V250?z4R^;Q:`EY]Y^WW`01
-!s100 o<;<ocm;FmJjJ8Qem[B>V0
-Z6 OV;C;2020.1;71
+L5
+VCfE?_C2=79SS07<`@5V`j0
+!s100 ^:^g?3>HWlU38icR_TEKB3
+Z7 OV;C;10.5b;63
 31
-Z7 !s110 1692910271
+Z8 !s110 1692935275
 !i10b 1
-Z8 !s108 1692910271.000000
-Z9 !s90 -reportprogress|300|-93|-work|work|D:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder.vhd|
-Z10 !s107 D:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder.vhd|
+Z9 !s108 1692935275.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder.vhd|
+Z11 !s107 E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder.vhd|
 !i113 1
-Z11 o-93 -work work
-Z12 tExplicit 1 CvgOpt 0
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
 Astruct
 R2
 R3
-DEx4 work 12 fourbitadder 0 22 250?z4R^;Q:`EY]Y^WW`01
-!i122 1
-l25
-L13 25
-V2[Sin2m@ZC1I:3]541[n`1
-!s100 Ce=jgegODL`ddl]`z_;oo1
-R6
-31
+R4
+DEx4 work 12 fourbitadder 0 22 CfE?_C2=79SS07<`@5V`j0
+l26
+L14
+Vhhm@[IPV1]jb4c3K[4>[@1
+!s100 bGO95@DIT:BdROBj[Xj]U3
 R7
-!i10b 1
+31
 R8
+!i10b 1
 R9
 R10
-!i113 1
 R11
-R12
-Efourbitadder_tb
-R1
-R2
-R3
-!i122 2
-R0
-Z13 8D:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder_tb.vhd
-Z14 FD:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder_tb.vhd
-l0
-L4 1
-V?=YGWP4S<8=C^jGoAVlnS0
-!s100 c4blcobNVdgUc41<>zdOC3
-R6
-31
-R7
-!i10b 1
-R8
-Z15 !s90 -reportprogress|300|-93|-work|work|D:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder_tb.vhd|
-!s107 D:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder_tb.vhd|
 !i113 1
-R11
 R12
-Asim
-R2
-R3
-DEx4 work 15 fourbitadder_tb 0 22 ?=YGWP4S<8=C^jGoAVlnS0
-!i122 2
-l22
-L7 30
-V4>Sg7_MIkHTbbDN]o>nc[1
-!s100 781>^lR2kiVj3IYnUNnaS2
-R6
-31
-R7
-!i10b 1
-R8
-R15
-Z16 !s107 D:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fourBitAdder_tb.vhd|
-!i113 1
-R11
-R12
+R13
 Efulladdermodule
-R1
+Z14 w1692924315
 R2
 R3
-!i122 0
+R4
 R0
-Z17 8D:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fullAdderModule.vhd
-Z18 FD:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fullAdderModule.vhd
+Z15 8E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/fullAdderModule.vhd
+Z16 FE:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/fullAdderModule.vhd
 l0
-L4 1
-ViURHWW_O`obRQ_R2HJO=03
-!s100 hXDTmbBF>KBno6zK]OAEI3
-R6
-31
+L5
+VPChMW?Q^;FCU8Ta0f^2g33
+!s100 8IU^oUE3GhPebT96ahOAF0
 R7
-!i10b 1
+31
 R8
-Z19 !s90 -reportprogress|300|-93|-work|work|D:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fullAdderModule.vhd|
-Z20 !s107 D:/Utilities/Documents/GITHUB/jgonzalez_digital_design_lab_2023/Sumador/fullAdderModule.vhd|
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/fullAdderModule.vhd|
+Z18 !s107 E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/fullAdderModule.vhd|
 !i113 1
-R11
 R12
+R13
 Abhv
 R2
 R3
-DEx4 work 15 fulladdermodule 0 22 iURHWW_O`obRQ_R2HJO=03
-!i122 0
-l11
-L10 5
-VaRd@BcYW<o8E:gT3T@VV10
-!s100 5niJocJ`fFQKg37aC=feb3
-R6
-31
+R4
+DEx4 work 15 fulladdermodule 0 22 PChMW?Q^;FCU8Ta0f^2g33
+l12
+L11
+VoQB2bz0bM?NCD9>3R^eoz0
+!s100 UUnXFnI9oIL9`1CPig5<C2
 R7
-!i10b 1
+31
 R8
-R19
-R20
+!i10b 1
+R9
+R17
+R18
 !i113 1
-R11
 R12
+R13
+Emainaddermodule
+Z19 w1692934549
+R2
+R3
+R4
+R0
+Z20 8E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/mainAdderModule.vhd
+Z21 FE:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/mainAdderModule.vhd
+l0
+L5
+VC;zXmBc6WMnCmg9XDLD2g3
+!s100 z?O4Q4]OnLT9h:IK3l5nX0
+R7
+31
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-93|-work|work|E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/mainAdderModule.vhd|
+Z23 !s107 E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/mainAdderModule.vhd|
+!i113 1
+R12
+R13
+Abehaivour
+R2
+R3
+R4
+DEx4 work 15 mainaddermodule 0 22 C;zXmBc6WMnCmg9XDLD2g3
+l35
+L13
+V@S[=9I@1Ym:G71L=LVJA@3
+!s100 Qi0D0fN7hnO5i[bikm@X^2
+R7
+31
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
+Emainaddermodule_tb
+Z24 w1692935199
+R2
+R3
+R4
+R0
+Z25 8E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/mainAdderModule_tb.vhd
+Z26 FE:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/mainAdderModule_tb.vhd
+l0
+L5
+VP[e[44[e=mPWML0dIM`;>1
+!s100 TzQlWgLFSHX`]o^^aE^5H0
+R7
+31
+R8
+!i10b 1
+R9
+Z27 !s90 -reportprogress|300|-93|-work|work|E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/mainAdderModule_tb.vhd|
+Z28 !s107 E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/mainAdderModule_tb.vhd|
+!i113 1
+R12
+R13
+Asim
+R2
+R3
+R4
+DEx4 work 18 mainaddermodule_tb 0 22 P[e[44[e=mPWML0dIM`;>1
+l22
+L8
+Va4GMclnKM4aF88OA>]8z63
+!s100 1Q[oj5PGVNi[`dllHSD1d3
+R7
+31
+R8
+!i10b 1
+R9
+R27
+R28
+!i113 1
+R12
+R13
+Endcmodule
+Z29 w1692934786
+R2
+R3
+R4
+R0
+Z30 8E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/nDCModule.vhd
+Z31 FE:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/nDCModule.vhd
+l0
+L5
+VXMF;Q_E4^D553baa9<32W0
+!s100 eBa4IKIc9UMhCO;TXnWjI1
+R7
+31
+R8
+!i10b 1
+R9
+Z32 !s90 -reportprogress|300|-93|-work|work|E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/nDCModule.vhd|
+Z33 !s107 E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/nDCModule.vhd|
+!i113 1
+R12
+R13
+Abhv
+R2
+R3
+R4
+DEx4 work 9 ndcmodule 0 22 XMF;Q_E4^D553baa9<32W0
+l13
+L11
+VbabLgZKEJPK5<OiHW<ojE3
+!s100 0E_e:mU]g];YPfm?9B`a22
+R7
+31
+R8
+!i10b 1
+R9
+R32
+R33
+!i113 1
+R12
+R13
+Esumtodisplaymodule
+Z34 w1692929294
+R2
+R3
+R4
+R0
+Z35 8E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/sumToDisplayModule.vhd
+Z36 FE:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/sumToDisplayModule.vhd
+l0
+L5
+V2hg8=X[ma?k:F^EMHA=Jg2
+!s100 zUlPnimQjO_oOM<aL35Vh2
+R7
+31
+R8
+!i10b 1
+R9
+Z37 !s90 -reportprogress|300|-93|-work|work|E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/sumToDisplayModule.vhd|
+Z38 !s107 E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/Sumador/sumToDisplayModule.vhd|
+!i113 1
+R12
+R13
+Astructural
+R2
+R3
+R4
+DEx4 work 18 sumtodisplaymodule 0 22 2hg8=X[ma?k:F^EMHA=Jg2
+l25
+L12
+VTD;_lUS129g3o^Faj9^2=3
+!s100 HJ918Ll>_6IjOb^?5OJcf2
+R7
+31
+R8
+!i10b 1
+R9
+R37
+R38
+!i113 1
+R12
+R13

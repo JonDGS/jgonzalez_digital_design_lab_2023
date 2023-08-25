@@ -1,5 +1,5 @@
 Flow report for Sumador
-Thu Aug 24 20:44:12 2023
+Thu Aug 24 21:47:36 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,10 +41,10 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Thu Aug 24 20:44:12 2023       ;
+; Flow Status                 ; Successful - Thu Aug 24 21:47:36 2023       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; Sumador                                     ;
-; Top-level Entity Name       ; fourBitAdder                                ;
+; Top-level Entity Name       ; mainAdderModule                             ;
 ; Family                      ; Cyclone V                                   ;
 ; Device                      ; 5CSEMA5F31C6                                ;
 ; Timing Models               ; Final                                       ;
@@ -63,41 +63,45 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/24/2023 20:44:05 ;
+; Start date & time ; 08/24/2023 21:47:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Sumador             ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                 ;
-+--------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
-; Assignment Name                      ; Value                                  ; Default Value ; Entity Name  ; Section Id                        ;
-+--------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 233497588804601.169293144527592        ; --            ; --           ; --                                ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --           ; fourBitAdder_tb                   ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --           ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --           ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --           ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --           ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; fourBitAdder_tb                        ; --            ; --           ; eda_simulation                    ;
-; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                   ; --            ; --           ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                  ; ModelSim (VHDL)                        ; <None>        ; --           ; --                                ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --           ; eda_simulation                    ;
-; EDA_TEST_BENCH_FILE                  ; fourBitAdder_tb.vhd                    ; --            ; --           ; fourBitAdder_tb                   ;
-; EDA_TEST_BENCH_MODULE_NAME           ; fourBitAdder_tb                        ; --            ; --           ; fourBitAdder_tb                   ;
-; EDA_TEST_BENCH_NAME                  ; fourBitAdder_tb                        ; --            ; --           ; eda_simulation                    ;
-; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --           ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --           ; --                                ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --           ; --                                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; fourBitAdder ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; fourBitAdder ; Top                               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; fourBitAdder ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --           ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --           ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --           ; --                                ;
-; TOP_LEVEL_ENTITY                     ; fourBitAdder                           ; Sumador       ; --           ; --                                ;
-+--------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                    ;
++--------------------------------------+----------------------------------------+---------------+-----------------+-----------------------------------+
+; Assignment Name                      ; Value                                  ; Default Value ; Entity Name     ; Section Id                        ;
++--------------------------------------+----------------------------------------+---------------+-----------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID                ; 233497588804601.169293524905088        ; --            ; --              ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --              ; mainAdderModule_tb                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --              ; fourBitAdder_tb                   ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --              ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --              ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --              ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --              ; eda_board_design_symbol           ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; mainAdderModule_tb                     ; --            ; --              ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                   ; --            ; --              ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                  ; ModelSim (VHDL)                        ; <None>        ; --              ; --                                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --              ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; mainAdderModule_tb.vhd                 ; --            ; --              ; mainAdderModule_tb                ;
+; EDA_TEST_BENCH_FILE                  ; fourBitAdder_tb.vhd                    ; --            ; --              ; fourBitAdder_tb                   ;
+; EDA_TEST_BENCH_MODULE_NAME           ; mainAdderModule_tb                     ; --            ; --              ; mainAdderModule_tb                ;
+; EDA_TEST_BENCH_MODULE_NAME           ; fourBitAdder_tb                        ; --            ; --              ; fourBitAdder_tb                   ;
+; EDA_TEST_BENCH_NAME                  ; fourBitAdder_tb                        ; --            ; --              ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; mainAdderModule_tb                     ; --            ; --              ; eda_simulation                    ;
+; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --              ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --              ; --                                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --              ; --                                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; mainAdderModule ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; mainAdderModule ; Top                               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; mainAdderModule ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --              ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --              ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --              ; --                                ;
+; TOP_LEVEL_ENTITY                     ; mainAdderModule                        ; Sumador       ; --              ; --                                ;
++--------------------------------------+----------------------------------------+---------------+-----------------+-----------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -105,8 +109,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:07     ; 1.0                     ; 4840 MB             ; 00:00:09                           ;
-; Total                  ; 00:00:07     ; --                      ; --                  ; 00:00:09                           ;
+; Analysis & Elaboration ; 00:00:07     ; 1.0                     ; 4839 MB             ; 00:00:10                           ;
+; Total                  ; 00:00:07     ; --                      ; --                  ; 00:00:10                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
