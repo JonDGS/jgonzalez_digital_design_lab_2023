@@ -45,9 +45,9 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -sv -work work +incdir+C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Contador6b {C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Contador6b/Contador6b.sv}
+vlog -sv -work work +incdir+C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Ejercicio_3/Contador6b {C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Ejercicio_3/Contador6b/Contador6b.sv}
 
-vlog -sv -work work +incdir+C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Contador6b {C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Contador6b/Contador6b_tb.sv}
+vlog -sv -work work +incdir+C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Ejercicio_3/Contador6b {C:/Users/DELL/Desktop/Digitales/jgonzalez_digital_design_lab_2023/Ejercicio_3/Contador6b/Contador6b_tb.sv}
 
 vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Contador6b_tb
 

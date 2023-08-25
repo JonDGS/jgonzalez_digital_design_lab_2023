@@ -6,7 +6,7 @@ module ContadorN_tb;
     // Variables del testbench
     logic clk = 0;
     logic rst = 0;
-    logic [N-1:0] valor_inicial = 3; // Valor inicial para el contador
+    logic [N-1:0] valor_inicial = 3; // Valor inicial para el contador, se cambia dependiendo la cantodad de bits que se usen
     logic [N-1:0] contador;
 
     // Instancia del contador
@@ -20,11 +20,11 @@ module ContadorN_tb;
     // Generación del reloj
     always #10 clk = ~clk;
 
-    // Simulación del testbench
+    // Simulación del testbench en ModelSim
     initial begin
-        $display("Comenzando simulación para un contador de %0d bits...", N);
+        $display("Iniciando simulación para un contador de %0d bits...", N);
         
-        rst = 1; // Activa el reset inicialmente
+        rst = 1;    // Activa el reset inicialmente
         #1 rst = 0; // Desactiva el reset
         
         // Simula durante 30 unidades de tiempo
@@ -42,7 +42,7 @@ module ContadorN_tb;
         rst = 1;
         #1 rst = 0;
         
-        // Simula durante 20 unidades de tiempo después del reset
+        // Simula durante 10 unidades de tiempo después del reset
         repeat (10) @(posedge clk);
 
         // Verificación automática de resultados después del reset

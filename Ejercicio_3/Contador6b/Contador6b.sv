@@ -1,3 +1,5 @@
+
+
 module Contador6b(
     input logic clk,
     input logic rst,
@@ -5,7 +7,7 @@ module Contador6b(
     output logic [6:0] display1,  //unidades
     output logic [6:0] display2  //decenas
 );
-
+    //Se declaran variables internas
     logic [5:0] reg_contador;
     logic [3:0] unidades;
     logic [3:0] decenas;
@@ -19,6 +21,7 @@ module Contador6b(
     end
 
     // Conversión de binario a unidades y decenas
+	 //Divide el numero de 6 bit en dos grupos 
     assign unidades = reg_contador[3:0];
     assign decenas = reg_contador[5:4];
 
