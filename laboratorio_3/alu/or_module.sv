@@ -4,6 +4,11 @@ module or_module #(parameter N = 4) (
   output wire [N-1:0] y
 );
 
-  assign y = a | b;
+  genvar i;
+  generate
+    for (i = 0; i < N; i = i + 1) begin: bit_and_generate
+      assign y[i] = a[i] | b[i];
+    end
+  endgenerate
 
 endmodule
