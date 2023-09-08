@@ -29,7 +29,7 @@ module alu_tb;
     if (y !== (a & b))
       $display("Prueba de AND fallida. a=%b, b=%b, y=%b", a, b, y);
     else
-      $display("Prueba de AND pasada. a=%b, b=%b, y=%b", a, b, y);
+      $display("Prueba de AND correcta. a=%b, b=%b, y=%b", a, b, y);
 
     // Prueba de operación OR
     a = 4'b1010;
@@ -39,7 +39,7 @@ module alu_tb;
     if (y !== (a | b))
       $display("Prueba de OR fallida. a=%b, b=%b, y=%b", a, b, y);
     else
-      $display("Prueba de OR pasada. a=%b, b=%b, y=%b", a, b, y);
+      $display("Prueba de OR correcta. a=%b, b=%b, y=%b", a, b, y);
 
     // Prueba de operación XOR
     a = 4'b1010;
@@ -49,7 +49,7 @@ module alu_tb;
     if (y !== (a ^ b))
       $display("Prueba de XOR fallida. a=%b, b=%b, y=%b", a, b, y);
     else
-      $display("Prueba de XOR pasada. a=%b, b=%b, y=%b", a, b, y);
+      $display("Prueba de XOR correcta. a=%b, b=%b, y=%b", a, b, y);
 
     // Agrega más pruebas según sea necesario
 

@@ -1,7 +1,7 @@
 module alu #(parameter N = 4) (
   input wire [N-1:0] a,
   input wire [N-1:0] b,
-  input wire [3:0] operation,  // Código de control para la operación (0: AND, 1: OR, 2: XOR, otros valores personalizables)
+  input wire [3:0] operation,  // Código de control para la operación (0: AND, 1: OR, 2: XOR, Faltan agregar los demás)
   output reg [N-1:0] y,
   output logic [6:0] display1
 );
@@ -26,6 +26,7 @@ module alu #(parameter N = 4) (
     .b(b),
     .y(xor_result)
   );
+  
 
   always @* begin
     case (operation)
@@ -35,5 +36,7 @@ module alu #(parameter N = 4) (
       default: y = 0;          // Otras operaciones personalizables
     endcase
   end
+  
+  
   
 endmodule
