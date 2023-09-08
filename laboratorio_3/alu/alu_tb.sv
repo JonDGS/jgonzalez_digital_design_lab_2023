@@ -53,8 +53,6 @@ module alu_tb;
 
     // Agrega más pruebas según sea necesario
 
-    // Finaliza la simulación
-    $finish;
   end
 
 endmodule
