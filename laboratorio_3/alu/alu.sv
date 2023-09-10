@@ -8,7 +8,7 @@ module alu #(parameter N = 4) (
   output logic [6:0] display1
 );
 
-  wire [N-1:0] and_result, or_result, xor_result, shiftLeft_result,shiftRight_result;
+  wire [N-1:0] and_result, or_result, xor_result, shiftLeft_result,shiftRight_result,mod_result;
   logic [3:0] displayResult1;
 
   and_module #(N) and_inst (
@@ -43,6 +43,11 @@ module alu #(parameter N = 4) (
 		.y(shiftRight_result)
    );
   
+   modulo_mod #(N) residuo_inst (
+    .a(a),
+    .b(b),
+    .y(mod_result)
+  );
 
   always @* begin
     case (operation)
@@ -52,6 +57,8 @@ module alu #(parameter N = 4) (
 		4'b0010: y = xor_result; // XOR
 		4'b0011: y = shiftLeft_result; // Shift Left
 		4'b0100: y = shiftRight_result; // Shift Right
+		4'b0101: y = mod_result; // Residuo
+
       default: y = 0;          // Otras operaciones personalizables
     endcase
   end

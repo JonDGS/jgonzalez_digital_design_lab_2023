@@ -54,6 +54,28 @@ module alu_tb;
       $display("Prueba de XOR fallida. a=%b, b=%b, y=%b", a, b, y);
     else
       $display("Prueba de XOR correcta. a=%b, b=%b, y=%b", a, b, y);
+		
+		
+		// Prueba de operación residuo donde de 0
+    a = 4'b1010;
+    b = 4'b0010;
+    operation = 4'b0101; // residuo
+    #10; // Espera 10 unidades de tiempo
+    if (y !== (a % b))
+      $display("Prueba de residuo fallida. a=%b, b=%b, y=%b", a, b, y);
+    else
+      $display("Prueba de residuo correcta. a=%b, b=%b, y=%b", a, b, y);
+		
+		
+		// Prueba de operación residuo donde no de 0
+    a = 4'b1111;
+    b = 4'b0010;
+    operation = 4'b0101; // Residuo
+    #10; // Espera 10 unidades de tiempo
+    if (y !== (a % b))
+      $display("Prueba de residuo fallida. a=%b, b=%b, y=%b", a, b, y);
+    else
+      $display("Prueba de residuo correcta. a=%b, b=%b, y=%b", a, b, y);
 
 		
 	 // Prueba de SHIFT LEFT
