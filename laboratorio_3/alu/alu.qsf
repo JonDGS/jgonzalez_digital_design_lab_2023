@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY fourBitDivider
+set_global_assignment -name TOP_LEVEL_ENTITY alu
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.2
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:11:18  SEPTEMBER 06, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.2 Lite Edition"
@@ -117,9 +117,6 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME fourBitMultiplier_tb -sec
 set_global_assignment -name EDA_TEST_BENCH_NAME fourBitDivider_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id fourBitDivider_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME fourBitDivider_tb -section_id fourBitDivider_tb
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_FILE and_tb.sv -section_id and_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE or_tb.sv -section_id or_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE xor_tb.sv -section_id xor_tb
@@ -131,4 +128,30 @@ set_global_assignment -name EDA_TEST_BENCH_FILE fullSubtractor_tb.sv -section_id
 set_global_assignment -name EDA_TEST_BENCH_FILE fourBitAdder_tb.sv -section_id fourBitAdder_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE fourBitMultiplier_tb.sv -section_id fourBitMultiplier_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE fourBitDivider_tb.sv -section_id fourBitDivider_tb
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AC30 -to display1[6]
+set_location_assignment PIN_AC29 -to display1[5]
+set_location_assignment PIN_AD30 -to display1[4]
+set_location_assignment PIN_AC28 -to display1[3]
+set_location_assignment PIN_AD29 -to display1[2]
+set_location_assignment PIN_AE29 -to display1[1]
+set_location_assignment PIN_AB23 -to display1[0]
+set_location_assignment PIN_AE11 -to a[0]
+set_location_assignment PIN_AC9 -to a[1]
+set_location_assignment PIN_AD10 -to a[2]
+set_location_assignment PIN_AE12 -to a[3]
+set_location_assignment PIN_AF9 -to b[0]
+set_location_assignment PIN_AF10 -to b[1]
+set_location_assignment PIN_AD11 -to b[2]
+set_location_assignment PIN_AD12 -to b[3]
+set_location_assignment PIN_AA14 -to operation[0]
+set_location_assignment PIN_AA15 -to operation[1]
+set_location_assignment PIN_W15 -to operation[2]
+set_location_assignment PIN_Y16 -to operation[3]
+set_location_assignment PIN_W19 -to overflow
+set_location_assignment PIN_Y19 -to negative
+set_location_assignment PIN_W17 -to zero
+set_location_assignment PIN_V18 -to carry
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

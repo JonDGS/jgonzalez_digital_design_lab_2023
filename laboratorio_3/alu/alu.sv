@@ -5,10 +5,14 @@ module alu #(parameter N = 4) (
   input wire [N-1:0] shift_number,
   input wire [3:0] operation,  // Código de control para la operación (0: AND, 1: OR, 2: XOR, Faltan agregar los demás)
   output reg [N-1:0] y,
+  output logic carry,
+  output logic zero,
+  output logic overflow,
+  output logic negative,
   output logic [6:0] display1
 );
 
-  wire [N-1:0] and_result, or_result, xor_result, shiftLeft_result,shiftRight_result,mod_result;
+  wire [N-1:0] and_result, or_result, xor_result, shiftLeft_result,shiftRight_result,mod_result, adder_result, sub_result;
   logic [3:0] displayResult1;
 
   and_module #(N) and_inst (
@@ -48,7 +52,25 @@ module alu #(parameter N = 4) (
     .b(b),
     .y(mod_result)
   );
-
+  
+  
+  fourBitFullAdder #(N) sumador_inst(
+  .A(a),
+  .B(b),
+  .K(1'b0),
+  .S(adder_result),
+  .Cout(overflow)
+  );
+  
+  fourBitFullAdder #(N) restador_inst(
+  .A(a),
+  .B(b),
+  .K(1'b1),
+  .S(sub_result),
+  .Cout(negative)
+  );
+  
+  
   always @* begin
     case (operation)
       4'b0000: y = and_result; // AND
@@ -58,11 +80,35 @@ module alu #(parameter N = 4) (
 		4'b0011: y = shiftLeft_result; // Shift Left
 		4'b0100: y = shiftRight_result; // Shift Right
 		4'b0101: y = mod_result; // Residuo
+		4'b0110: y = adder_result; // Suma
+		4'b0111: y = sub_result; // Resta
 
       default: y = 0;          // Otras operaciones personalizables
     endcase
   end
   
+  
+  always_comb begin
+        case (y)
+            4'b0000: display1 = 7'b1000000; // 0
+            4'b0001: display1 = 7'b1111001; // 1
+            4'b0010: display1 = 7'b0100100; // 2
+            4'b0011: display1 = 7'b0110000; // 3
+            4'b0100: display1 = 7'b0011001; // 4
+            4'b0101: display1 = 7'b0010010; // 5
+            4'b0110: display1 = 7'b0000010; // 6
+            4'b0111: display1 = 7'b1111000; // 7
+            4'b1000: display1 = 7'b0000000; // 8
+            4'b1001: display1 = 7'b0010000; // 9
+            4'b1010: display1 = 7'b0001000; // A
+            4'b1011: display1 = 7'b0000011; // B
+            4'b1100: display1 = 7'b1000110; // C
+            4'b1101: display1 = 7'b0100001; // D
+            4'b1110: display1 = 7'b0000110; // E
+            4'b1111: display1 = 7'b0001110; // F
+            default: display1 = 7'b0000000;
+        endcase
+		  end
   
   
 endmodule
