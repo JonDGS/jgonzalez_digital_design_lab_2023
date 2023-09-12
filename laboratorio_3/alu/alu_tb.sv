@@ -69,7 +69,7 @@ module alu_tb;
 		
 		// Prueba de operación residuo donde no de 0
     a = 4'b1111;
-    b = 4'b0010;
+    b = 4'b0110;
     operation = 4'b0101; // Residuo
     #10; // Espera 10 unidades de tiempo
     if (y !== (a % b))
