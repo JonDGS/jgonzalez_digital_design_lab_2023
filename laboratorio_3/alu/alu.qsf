@@ -117,9 +117,6 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME fourBitMultiplier_tb -sec
 set_global_assignment -name EDA_TEST_BENCH_NAME fourBitDivider_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id fourBitDivider_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME fourBitDivider_tb -section_id fourBitDivider_tb
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_AC30 -to display1[6]
 set_location_assignment PIN_AC29 -to display1[5]
 set_location_assignment PIN_AD30 -to display1[4]
@@ -164,6 +161,9 @@ set_location_assignment PIN_Y19 -to carryOutF
 set_location_assignment PIN_W19 -to overflowF
 set_location_assignment PIN_W17 -to negativeF
 set_location_assignment PIN_V18 -to zeroF
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_FILE and_tb.sv -section_id and_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE or_tb.sv -section_id or_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE xor_tb.sv -section_id xor_tb

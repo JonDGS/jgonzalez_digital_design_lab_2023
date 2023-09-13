@@ -89,7 +89,7 @@ module alu #(parameter N = 4) (
 	);
 	
   fourBitDivider #(N+4) div_inst(
-	.A(a),
+	.A({{N{1'b0}}, a}),
 	.B(b),
 	.Q({divQ_resultA, divQ_resultB}),
 	.R({divR_resultA, divR_resultB})
