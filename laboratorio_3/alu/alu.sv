@@ -2,11 +2,10 @@ module alu #(parameter N = 4) (
   input wire [N-1:0] a,
   input wire [N-1:0] b,
   input wire [3:0] operation,  // Código de control para la operación (0: AND, 1: OR, 2: XOR, Faltan agregar los demás)
-  output logic carryOut,
-  output logic zero,
-  output logic overflowAdd,
-  output logic overflowSub, 
-  output logic negative,
+  output logic carryOutF,
+  output logic overflowF,
+  output logic negativeF,
+  output logic zeroF,
   output logic [6:0] display1,
   output logic [6:0] display2,
   output logic [6:0] display3,
@@ -19,6 +18,11 @@ module alu #(parameter N = 4) (
   reg [N-1:0] x;
   reg [N-1:0] z;
   reg [N-1:0] w;
+  logic carryOut;
+  logic zero;
+  logic overflowAdd;
+  logic overflowSub; 
+  logic negative;
 
   and_module #(N) and_inst (
     .a(a),
@@ -120,9 +124,13 @@ module alu #(parameter N = 4) (
 		end
 		4'b0110: begin
 			y = adder_result; // Suma
+			carryOutF = carryOut;
+			overflowF = overflowAdd;
 		end
 		4'b0111: begin
 			y = sub_result; // Resta
+			negativeF = negative;
+			overflowF = overflowSub;
 		end
 		4'b1000: begin
 			y = multi_resultB;
@@ -139,13 +147,17 @@ module alu #(parameter N = 4) (
 			x = 0;
 			z = 0;
 			w = 0;
+			zeroF = 0;
+			overflowF = 0;
+			negativeF = 0;
+			carryOutF = 0;
 		end
     endcase
 	 
 	 if (y == 4'b0000) begin
-        zero = 1'b1; // Establecer la bandera en 1 si el resultado es cero
+        zeroF = 1'b1; // Establecer la bandera en 1 si el resultado es cero
     end else begin
-        zero = 1'b0; // Establecer la bandera en 0 si el resultado no es cero
+        zeroF = 1'b0; // Establecer la bandera en 0 si el resultado no es cero
     end	 
   end
   
