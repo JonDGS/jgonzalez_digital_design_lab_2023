@@ -2,17 +2,23 @@ module alu #(parameter N = 4) (
   input wire [N-1:0] a,
   input wire [N-1:0] b,
   input wire [3:0] operation,  // Código de control para la operación (0: AND, 1: OR, 2: XOR, Faltan agregar los demás)
-  output reg [N-1:0] y,
   output logic carryOut,
   output logic zero,
   output logic overflowAdd,
   output logic overflowSub, 
   output logic negative,
-  output logic [6:0] display1
+  output logic [6:0] display1,
+  output logic [6:0] display2,
+  output logic [6:0] display3,
+  output logic [6:0] display4
 );
 
-  wire [N-1:0] and_result, or_result, xor_result, shiftLeft_result,shiftRight_result,mod_result, adder_result, sub_result;
+  wire [N-1:0] and_result, or_result, xor_result, shiftLeft_result,shiftRight_result,mod_result, adder_result, sub_result, multi_resultA, multi_resultB, divQ_resultA, divQ_resultB, divR_resultA, divR_resultB;
   logic [3:0] displayResult1;
+  reg [N-1:0] y;
+  reg [N-1:0] x;
+  reg [N-1:0] z;
+  reg [N-1:0] w;
 
   and_module #(N) and_inst (
     .a(a),
@@ -71,21 +77,69 @@ module alu #(parameter N = 4) (
   .Overflow(overflowSub)
   );
   
+  fourBitMultiplier #(N) multi_inst(
+	.A(a),
+	.B(b),
+	.M({multi_resultA, multi_resultB})
+	
+	);
+	
+  fourBitDivider #(N+4) div_inst(
+	.A(a),
+	.B(b),
+	.Q({divQ_resultA, divQ_resultB}),
+	.R({divR_resultA, divR_resultB})
+	);
+	
+  
   assign overflow = overflowAdd | overflowSub;
     
   always @* begin
   
     case (operation)
-      4'b0000: y = and_result; // AND
-      4'b0001: y = or_result;  // OR
-      4'b0010: y = xor_result; // XOR
-		4'b0010: y = xor_result; // XOR
-		4'b0011: y = shiftLeft_result; // Shift Left
-		4'b0100: y = shiftRight_result; // Shift Right
-		4'b0101: y = mod_result; // Residuo
-		4'b0110: y = adder_result; // Suma
-		4'b0111: y = sub_result; // Resta
-      4'b1111: y = 0;
+      4'b0000: begin
+			y = and_result; // AND
+		end
+      4'b0001: begin
+			y = or_result;  // OR
+		end
+      4'b0010: begin
+			y = xor_result; // XOR
+		end
+		4'b0010: begin
+			y = xor_result; // XOR
+		end
+		4'b0011: begin
+			y = shiftLeft_result; // Shift Left
+		end
+		4'b0100: begin
+			y = shiftRight_result; // Shift Right
+		end
+		4'b0101: begin
+			y = mod_result; // Residuo
+		end
+		4'b0110: begin
+			y = adder_result; // Suma
+		end
+		4'b0111: begin
+			y = sub_result; // Resta
+		end
+		4'b1000: begin
+			y = multi_resultB;
+			x = multi_resultA;
+		end
+		4'b1001: begin
+			y = divQ_resultB;
+			x = divQ_resultA;
+			z = divR_resultB;
+			w = divR_resultA;
+		end
+      4'b1111: begin
+			y = 0;
+			x = 0;
+			z = 0;
+			w = 0;
+		end
     endcase
 	 
 	 if (y == 4'b0000) begin
@@ -117,7 +171,69 @@ module alu #(parameter N = 4) (
             4'b1111: display1 = 7'b0001110; // F
             default: display1 = 7'b0000000;
         endcase
+		  
+		  case (x)
+            4'b0000: display2 = 7'b1111111; // 0
+            4'b0001: display2 = 7'b1111001; // 1
+            4'b0010: display2 = 7'b0100100; // 2
+            4'b0011: display2 = 7'b0110000; // 3
+            4'b0100: display2 = 7'b0011001; // 4
+            4'b0101: display2 = 7'b0010010; // 5
+            4'b0110: display2 = 7'b0000010; // 6
+            4'b0111: display2 = 7'b1111000; // 7
+            4'b1000: display2 = 7'b0000000; // 8
+            4'b1001: display2 = 7'b0010000; // 9
+            4'b1010: display2 = 7'b0001000; // A
+            4'b1011: display2 = 7'b0000011; // B
+            4'b1100: display2 = 7'b1000110; // C
+            4'b1101: display2 = 7'b0100001; // D
+            4'b1110: display2 = 7'b0000110; // E
+            4'b1111: display2 = 7'b0001110; // F
+            default: display2 = 7'b0000000;
+        endcase
+		  
+		  case (z)
+            4'b0000: display3 = 7'b1111111; // 0
+            4'b0001: display3 = 7'b1111001; // 1
+            4'b0010: display3 = 7'b0100100; // 2
+            4'b0011: display3 = 7'b0110000; // 3
+            4'b0100: display3 = 7'b0011001; // 4
+            4'b0101: display3 = 7'b0010010; // 5
+            4'b0110: display3 = 7'b0000010; // 6
+            4'b0111: display3 = 7'b1111000; // 7
+            4'b1000: display3 = 7'b0000000; // 8
+            4'b1001: display3 = 7'b0010000; // 9
+            4'b1010: display3 = 7'b0001000; // A
+            4'b1011: display3 = 7'b0000011; // B
+            4'b1100: display3 = 7'b1000110; // C
+            4'b1101: display3 = 7'b0100001; // D
+            4'b1110: display3 = 7'b0000110; // E
+            4'b1111: display3 = 7'b0001110; // F
+            default: display3 = 7'b0000000;
+        endcase
+		  
+		  case (w)
+            4'b0000: display4 = 7'b1111111; // 0
+            4'b0001: display4 = 7'b1111001; // 1
+            4'b0010: display4 = 7'b0100100; // 2
+            4'b0011: display4 = 7'b0110000; // 3
+            4'b0100: display4 = 7'b0011001; // 4
+            4'b0101: display4 = 7'b0010010; // 5
+            4'b0110: display4 = 7'b0000010; // 6
+            4'b0111: display4 = 7'b1111000; // 7
+            4'b1000: display4 = 7'b0000000; // 8
+            4'b1001: display4 = 7'b0010000; // 9
+            4'b1010: display4 = 7'b0001000; // A
+            4'b1011: display4 = 7'b0000011; // B
+            4'b1100: display4 = 7'b1000110; // C
+            4'b1101: display4 = 7'b0100001; // D
+            4'b1110: display4 = 7'b0000110; // E
+            4'b1111: display4 = 7'b0001110; // F
+            default: display4 = 7'b0000000;
+        endcase
 		  end
+		  
+		  
   
   
 endmodule
