@@ -6,6 +6,10 @@ module alu #(parameter N = 4) (
   output logic overflowF,
   output logic negativeF,
   output logic zeroF,
+  output reg [N-1:0] y,
+  output reg [N-1:0] x,
+  output reg [N-1:0] z,
+  output reg [N-1:0] w,
   output logic [6:0] display1,
   output logic [6:0] display2,
   output logic [6:0] display3,
@@ -14,10 +18,6 @@ module alu #(parameter N = 4) (
 
   wire [N-1:0] and_result, or_result, xor_result, shiftLeft_result,shiftRight_result,mod_result, adder_result, sub_result, multi_resultA, multi_resultB, divQ_resultA, divQ_resultB, divR_resultA, divR_resultB;
   logic [3:0] displayResult1;
-  reg [N-1:0] y;
-  reg [N-1:0] x;
-  reg [N-1:0] z;
-  reg [N-1:0] w;
   logic carryOut;
   logic zero;
   logic overflowAdd;
@@ -89,7 +89,7 @@ module alu #(parameter N = 4) (
 	);
 	
   fourBitDivider #(N+4) div_inst(
-	.A(a),
+	.A({{N{1'b0}}, a}),
 	.B(b),
 	.Q({divQ_resultA, divQ_resultB}),
 	.R({divR_resultA, divR_resultB})
