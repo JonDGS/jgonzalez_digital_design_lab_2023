@@ -7,13 +7,13 @@ module logic_buscaminas (
   input logic btn_left_right,
   input logic btn_flag,
   input logic btn_select,
-  input [3:0] bombs, // Entrada para configurar la cantidad de bombas
-  output logic estado
+  input [3:0] bombas // Entrada para configurar la cantidad de bombas
+  //output logic estado
   
 );
 
   reg [3:0] matriz [7:0][7:0];
-  logic [1:0] estado_actual, estado_siguiente;
+  //logic [1:0] estado_actual, estado_siguiente;
   reg [2:0] bombas_adyacentes;
   
   // Instancia del módulo buscaminas
@@ -30,7 +30,6 @@ module logic_buscaminas (
   reg [3:0] cursor_x; // Variable interna para el cursor en X
   reg [3:0] cursor_y; // Variable interna para el cursor en Y
   
- 
 	
   always_ff @(posedge clk or posedge rst) begin
   if (rst) begin
@@ -56,7 +55,22 @@ module logic_buscaminas (
 	end
 end
 
-  // Asignar el estado actual
-  assign estado = estado_actual;
+
+// Lógica para cambiar al estado 0010 (posible bomba) al presionar el botón de la bandera
+always_ff @(posedge clk or posedge rst) begin
+  if (rst) begin
+    // Inicializaciones cuando se reinicia el juego.
+    estado_actual <= 2'b00;
+  end else if (btn_flag && matriz[cursor_x][cursor_y] == 4'b0011) begin
+    // Cambiar al estado 0010 (posible bomba) cuando se presiona el botón de la bandera
+    estado_actual <= 2'b10;
+  end
+end
+
+
+
+
+//Asignar el estado actual
+assign estado = estado_actual;
 
 endmodule
