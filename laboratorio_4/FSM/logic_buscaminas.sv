@@ -9,7 +9,6 @@ module logic_buscaminas (
   input logic btn_select,
   input [3:0] bombas // Entrada para configurar la cantidad de bombas
   //output logic estado
-  
 );
 
   reg [3:0] matriz [7:0][7:0];
@@ -66,8 +65,6 @@ always_ff @(posedge clk or posedge rst) begin
     estado_actual <= 2'b10;
   end
 end
-
-
 
 
 //Asignar el estado actual
