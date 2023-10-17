@@ -26,6 +26,11 @@ module logic_buscaminas (
     .estado(estado_actual)
   );
   
+  random_matrix rand_inst(
+  .entrada(bombas),
+  .matriz(matriz)
+  );
+  
   reg [3:0] cursor_x; // Variable interna para el cursor en X
   reg [3:0] cursor_y; // Variable interna para el cursor en Y
   
