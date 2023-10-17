@@ -2,6 +2,7 @@ module vgaGrid_tb;
   
   // Define test inputs
   logic clk = 0;
+  logic clk_out = 0;
   logic [9:0] x, y;
   logic [3:0] posX, posY;
   logic wr_enable = 0;
@@ -15,10 +16,34 @@ module vgaGrid_tb;
   //Square color test
   reg [7:0] sqr_color [7:0][7:0][2:0];
   
+  module pll (
+    input logic inclk0,    // Señal de reloj de entrada
+    output logic c0        // Señal de reloj de salida
+);
+
+    logic toggle;
+	 
+	 initial begin
+		toggle = 0;
+	 end
+
+
+    // Flip-flop para dividir por 2
+    always @(posedge inclk0) begin
+        toggle <= ~toggle;
+    end
+
+    // Salida es el valor de toggle, que cambia con cada flanco de subida de inclk0
+    assign c0 = toggle;
+
+endmodule
+  
+  pll converter(clk, clk_out);
+  
   
   // Instantiate the module under test
   vgaGrid dut(
-				  .clk(clk),
+				  .clk(clk_out),
 				  .x(x),
 				  .y(y),
 				  .posX(posX),
@@ -89,12 +114,13 @@ end
 	 posX <= 0;
     posY <= 0;
 	 wr_enable <= 1;
+	 
+	 assign r_in = sqr_color[posX][posY][0];
+	 assign g_in = sqr_color[posX][posY][1];
+	 assign b_in = sqr_color[posX][posY][2];
+	 
     repeat (8 * 8) begin
-      @(posedge clk) begin
-		  r_in <= sqr_color[posX][posY][0];
-		  g_in <= sqr_color[posX][posY][1];
-		  b_in <= sqr_color[posX][posY][2];
-		  
+      @(posedge clk_out) begin
         posX <= posX + 1;
         if (posX == 8) begin
           posX <= 0;
@@ -110,7 +136,7 @@ end
 	 x <= 0;
     y <= 0;
     repeat (640 * 480) begin
-      @(posedge clk) begin
+      @(posedge clk_out) begin
         x <= x + 1;
         if (x == 640) begin
           x <= 0;

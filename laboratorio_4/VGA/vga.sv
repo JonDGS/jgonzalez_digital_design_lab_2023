@@ -15,7 +15,9 @@ module vga(
 	
 	vgaController vgaCont(vgaclk, hsync, vsync, sync_b, blank_b, x, y);
 
-	vgaGrid grid(.x(x),
+	vgaGrid grid(
+					 .clk(vgaclk),
+					 .x(x),
 					 .y(y), 
 					 .posX(posX), 
 					 .posY(posY), 
