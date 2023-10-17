@@ -10,9 +10,8 @@ module buscaminas (
 
 reg [3:0]matriz_bombas [7:0][7:0];
 logic [1:0] estado_actual,estado_siguiente;
-reg [2:0]bombasAdyacentes;
 
-verBombas bombasAd (.matriz_bombas(matriz_bombas),.x(x),.y(y), .bombasAdyacentes(bombasAdyacentes));
+
 
 initial begin
 	for (int i = 0; i < 8; i++) begin
@@ -74,8 +73,7 @@ $display("ESTADO DE LA MAQUINA: %b",estado_actual);
 			else
 				if(!esBomba)begin
 					$display("NO ES BOMBA Y NO MARCADA");
-					$display("NUMERO DE BOMBAS ADYACENTES: %b",bombasAdyacentes);
-					matriz_bombas[x][y]=bombasAdyacentes;
+					
 					
 					estado_siguiente=2'b01;
 					end
@@ -99,35 +97,3 @@ assign estado =estado_actual;
 endmodule
 
 
-
-module verBombas (input [3:0]matriz_bombas [7:0][7:0],input [2:0] x,input [2:0] y, output logic [2:0]bombasAdyacentes);
-always @(*)begin
-	bombasAdyacentes=3'b000;
-
-	if(matriz_bombas[x-1][y-1]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-
-	if(matriz_bombas[x-1][y]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-		
-	if(matriz_bombas[x-1][y+1]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-		
-	if(matriz_bombas[x][y-1]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-		
-	if(matriz_bombas[x][y+1]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-		
-	if(matriz_bombas[x+1][y-1]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-		
-	if(matriz_bombas[x+1][y]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-		
-	if(matriz_bombas[x+1][y+1]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-
-end	
-
-endmodule
