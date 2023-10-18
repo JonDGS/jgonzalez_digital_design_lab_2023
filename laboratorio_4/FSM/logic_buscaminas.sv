@@ -26,39 +26,19 @@ module logic_buscaminas (
     .estado(estado_actual)
   );
   
-  random_matrix rand_inst(
-  .entrada(bombas),
-  .matriz(matriz)
+    movimiento move_inst (
+    .clk(clk),
+    .rst(rst),
+    .btn_up_down(btn_up_down),
+    .btn_left_right(btn_left_right),
+    .cursor_x(cursor_x),
+    .cursor_y(cursor_y)
   );
-  
+
   reg [3:0] cursor_x; // Variable interna para el cursor en X
   reg [3:0] cursor_y; // Variable interna para el cursor en Y
   
-	
-  always_ff @(posedge clk or posedge rst) begin
-  if (rst) begin
-    // Inicializaciones cuando se reinicia el juego.
-    // También puedes reiniciar otros estados del juego según tus necesidades.
-    cursor_x <= 0; // Inicializar la posición en la esquina superior izquierda
-    cursor_y <= 0;
-  end else begin
-    // Actualizar la posición en función de los botones de movimiento.
-    if (btn_up_down) begin
-      if (cursor_y < 8) // Mover hacia abajo si no se alcanza el borde inferior
-        cursor_y <= cursor_y + 1;
-      else if (cursor_y == 8) // Rebotar al llegar al borde inferior
-        cursor_y <= 0;
-    end
-				
-    if (btn_left_right) begin
-      if (cursor_x < 8) // Mover hacia la derecha si no se alcanza el borde derecho
-        cursor_x <= cursor_x + 1;
-      else if (cursor_x == 8) // Rebotar al llegar al borde derecho
-        cursor_x <= 0;
-     end
-	end
-end
-verBombas bombasAd (.matriz_bombas(matriz),.x(cursor_x),.y(cursor_y), .bombasAdyacentes(bombasAdyacentes));
+//verBombas bombasAd (.matriz_bombas(matriz),.x(cursor_x),.y(cursor_y), .bombasAdyacentes(bombasAdyacentes));
 
 // Lógica para cambiar al estado 0010 (posible bomba) al presionar el botón de la bandera
 always_ff @(posedge clk or posedge rst) begin
@@ -73,10 +53,8 @@ always_ff @(posedge clk or posedge rst) begin
 	end 
 end
 
-
 //Asignar el estado actual
 assign estado = estado_actual;
-
 endmodule
 
 
@@ -107,7 +85,6 @@ always @(*)begin
 		
 	if(matriz_bombas[x+1][y+1]==11)
 		bombasAdyacentes=bombasAdyacentes+3'b001;
-
 end	
 
 endmodule
