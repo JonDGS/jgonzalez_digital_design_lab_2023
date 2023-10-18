@@ -7,7 +7,7 @@ module vgaGrid(
                output logic [7:0] r_out, g_out, b_out
 					);
 	
-	 localparam SQR_SIZE = 53;
+	 localparam SQR_SIZE = 60;
   
 	 logic inrectBG1;
     logic inrectBG2;

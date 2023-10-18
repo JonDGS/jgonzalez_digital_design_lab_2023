@@ -78,7 +78,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY vgaGrid
+set_global_assignment -name TOP_LEVEL_ENTITY vga
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:14:41  OCTOBER 08, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.2 Lite Edition"
@@ -138,6 +138,7 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME vgaGrid_tb -section_id vg
 set_global_assignment -name SYSTEMVERILOG_FILE rectgen.sv
 set_global_assignment -name EDA_TEST_BENCH_FILE vga_tb.sv -section_id vga_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE vgaGrid_tb.sv -section_id vgaGrid_tb
+set_global_assignment -name SYSTEMVERILOG_FILE decoColor.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
