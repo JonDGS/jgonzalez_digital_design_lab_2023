@@ -10,9 +10,8 @@ module buscaminas (
 
 reg [3:0]matriz_bombas [7:0][7:0];
 logic [1:0] estado_actual,estado_siguiente;
-reg [2:0]bombasAdyacentes;
 
-verBombas bombasAd (.matriz_bombas(matriz_bombas),.x(x),.y(y), .bombasAdyacentes(bombasAdyacentes));
+
 
 initial begin
 	for (int i = 0; i < 8; i++) begin
@@ -24,8 +23,8 @@ initial begin
 		  end
 	end
 end
-always @(*)begin
 
+always @(*)begin
 for (int i = 0; i < 8; i++) begin
 		for (int j = 0; j < 8; j++) begin
 	$display("matriz_bombas[%0d][%0d] = %d", i,j, matriz_bombas[i][j]);
@@ -43,14 +42,11 @@ always_ff @(posedge clk or posedge rst)
 
 always @(*)
 begin
-$display("matriz_bombas SELECCIONADA[%0d][%0d] = %d", x,y, matriz_bombas[x][y]);
-$display("ESTADO DE LA MAQUINA: %b",estado_actual);
 
 //ESTADO DE BOMBA    0--NADA,1-9--NUMERO DE BOMBAS ADYACENTES, 10-BOMBA MARCADA,11-BOMBA
       case (estado_actual)
         2'b00: // ESTADO INICIAL
 		  begin
-		  $display("CAMBIO DE LA MAQUINA: %b",estado_actual);
          if(initButton)
 			begin
 				estado_siguiente=2'b01;
@@ -60,33 +56,31 @@ $display("ESTADO DE LA MAQUINA: %b",estado_actual);
         end
         2'b01: // ESTADO JUGANDO 
 		  begin
-		  $display("CAMBIO DE LA MAQUINA: %b",estado_actual);
          if(matriz_bombas[x][y]==11 )begin
 			
 				if(esBomba)begin
 					$display("ES BOMBA Y LA MARCO");
 					matriz_bombas[x][y]= 10;
+					estado_siguiente=2'b01;
 				end
 				else begin
-					$display("BOMBA Y NO MARCADA===MAMO");
+					$display("BOMBA Y NO MARCADA===PERDIO");
 					estado_siguiente=2'b11;end
 				end
 			else
 				if(!esBomba)begin
 					$display("NO ES BOMBA Y NO MARCADA");
-					$display("NUMERO DE BOMBAS ADYACENTES: %b",bombasAdyacentes);
-					matriz_bombas[x][y]=bombasAdyacentes;
 					
 					estado_siguiente=2'b01;
 					end
 				else begin
-					$display("NO ES BOMBA Y NO MARCADA");
+					$display("NO ES BOMBA Y LA MARCO");
 					matriz_bombas[x][y]= 10;
+					estado_siguiente=2'b01;
 					end
          end
         2'b10: // ESTADO GANO
 		  begin
-		  $display("CAMBIO DE LA MAQUINA: %b",estado_actual);
 			estado_siguiente=2'b10;
         end
         2'b11: // ESTADO PERDIO
@@ -99,35 +93,3 @@ assign estado =estado_actual;
 endmodule
 
 
-
-module verBombas (input [3:0]matriz_bombas [7:0][7:0],input [2:0] x,input [2:0] y, output logic [2:0]bombasAdyacentes);
-always @(*)begin
-	bombasAdyacentes=3'b000;
-
-	if(matriz_bombas[x-1][y-1]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-
-	if(matriz_bombas[x-1][y]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-		
-	if(matriz_bombas[x-1][y+1]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-		
-	if(matriz_bombas[x][y-1]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-		
-	if(matriz_bombas[x][y+1]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-		
-	if(matriz_bombas[x+1][y-1]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-		
-	if(matriz_bombas[x+1][y]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-		
-	if(matriz_bombas[x+1][y+1]==11)
-		bombasAdyacentes=bombasAdyacentes+3'b001;
-
-end	
-
-endmodule
