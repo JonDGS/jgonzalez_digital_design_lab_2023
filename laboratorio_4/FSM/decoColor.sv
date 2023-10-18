@@ -1,5 +1,5 @@
 module decoColor(
-		input logic [2:0] code,
+		input logic [3:0] code,
 		output logic [7:0] r,
 		output logic [7:0] g,
 		output logic [7:0] b

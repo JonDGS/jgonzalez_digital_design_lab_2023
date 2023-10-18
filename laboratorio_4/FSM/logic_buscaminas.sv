@@ -7,13 +7,19 @@ module logic_buscaminas (
   input logic btn_left_right,
   input logic btn_flag,
   input logic btn_select,
-  input [3:0] bombas // Entrada para configurar la cantidad de bombas
+  input [3:0] bombas, // Entrada para configurar la cantidad de bombas
   //output logic estado
+  output reg [2:0] cursor_x, cursor_y,
+  output logic wr_enable
 );
 
   reg [3:0] matriz [7:0][7:0];
   //logic [1:0] estado_actual, estado_siguiente;
   reg [2:0] bombasAdyacentes;
+  logic wr_enable0;
+  logic wr_enable1;
+  
+  assign wr_enable = wr_enable0 && wr_enable1;
   
   // Instancia del módulo buscaminas
   buscaminas fsm_inst(
@@ -23,7 +29,8 @@ module logic_buscaminas (
     .y(cursor_y),
     .esBomba(esBomba),
     .initButton(initButton),
-    .estado(estado_actual)
+    .estado(estado_actual),
+	 .wr_enable(wr_enable0)
   );
   
     movimiento move_inst (
@@ -35,8 +42,8 @@ module logic_buscaminas (
     .cursor_y(cursor_y)
   );
 
-  reg [3:0] cursor_x; // Variable interna para el cursor en X
-  reg [3:0] cursor_y; // Variable interna para el cursor en Y
+//  reg [3:0] cursor_x; // Variable interna para el cursor en X
+//  reg [3:0] cursor_y; // Variable interna para el cursor en Y
   
 //verBombas bombasAd (.matriz_bombas(matriz),.x(cursor_x),.y(cursor_y), .bombasAdyacentes(bombasAdyacentes));
 
@@ -50,7 +57,10 @@ always_ff @(posedge clk or posedge rst) begin
     estado_actual <= 2'b10;
   end else if (matriz[cursor_x][cursor_y] == 4'b0000)begin
 		matriz[cursor_x][cursor_y] = bombasAdyacentes;
-	end 
+		wr_enable1 <= 1;
+	end else begin
+		wr_enable1 <= 0;
+	end
 end
 
 //Asignar el estado actual

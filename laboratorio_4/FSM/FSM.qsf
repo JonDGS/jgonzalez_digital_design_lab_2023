@@ -39,14 +39,12 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY buscaminas
+set_global_assignment -name TOP_LEVEL_ENTITY main
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:33:04  SEPTEMBER 27, 2023"
-set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.2 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name BOARD "DE1-SoC Board"
-set_global_assignment -name SYSTEMVERILOG_FILE buscaminas.sv
-set_global_assignment -name SYSTEMVERILOG_FILE buscaminas_tb.sv
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
@@ -59,25 +57,73 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH buscaminas_tb -
 set_global_assignment -name EDA_TEST_BENCH_NAME buscaminas_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id buscaminas_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME buscaminas_tb -section_id buscaminas_tb
-set_global_assignment -name SYSTEMVERILOG_FILE random_matrix.sv
-set_global_assignment -name SYSTEMVERILOG_FILE random_matriz_tb.sv
 set_global_assignment -name EDA_TEST_BENCH_NAME random_matriz_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id random_matriz_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME random_matriz_tb -section_id random_matriz_tb
-set_global_assignment -name SYSTEMVERILOG_FILE logic_buscaminas_tb.sv
 set_global_assignment -name EDA_TEST_BENCH_NAME logic_buscaminas_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id logic_buscaminas_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME logic_buscaminas_tb -section_id logic_buscaminas_tb
-set_global_assignment -name SYSTEMVERILOG_FILE movimiento.sv
-set_global_assignment -name SYSTEMVERILOG_FILE movimiento_tb.sv
 set_global_assignment -name EDA_TEST_BENCH_NAME movimiento_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id movimiento_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME movimiento_tb -section_id movimiento_tb
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_FILE buscaminas_tb.sv -section_id buscaminas_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE random_matriz_tb.sv -section_id random_matriz_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE logic_buscaminas_tb.sv -section_id logic_buscaminas_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE movimiento_tb.sv -section_id movimiento_tb
+set_global_assignment -name SYSTEMVERILOG_FILE logic_buscaminas.sv
+set_global_assignment -name SYSTEMVERILOG_FILE vgaGrid_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE vgaGrid.sv
+set_global_assignment -name SYSTEMVERILOG_FILE vgaController.sv
+set_global_assignment -name SYSTEMVERILOG_FILE vga_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE vga.sv
+set_global_assignment -name SYSTEMVERILOG_FILE pll.sv
+set_global_assignment -name SYSTEMVERILOG_FILE decoColor.sv
+set_global_assignment -name SYSTEMVERILOG_FILE buscaminas.sv
+set_global_assignment -name SYSTEMVERILOG_FILE buscaminas_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE random_matrix.sv
+set_global_assignment -name SYSTEMVERILOG_FILE random_matriz_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE logic_buscaminas_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE movimiento.sv
+set_global_assignment -name SYSTEMVERILOG_FILE movimiento_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE main.sv
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE rectgen.sv
+set_location_assignment PIN_AF14 -to clk
+set_location_assignment PIN_A13 -to r_out[0]
+set_location_assignment PIN_C13 -to r_out[1]
+set_location_assignment PIN_E13 -to r_out[2]
+set_location_assignment PIN_B12 -to r_out[3]
+set_location_assignment PIN_C12 -to r_out[4]
+set_location_assignment PIN_D12 -to r_out[5]
+set_location_assignment PIN_E12 -to r_out[6]
+set_location_assignment PIN_F13 -to r_out[7]
+set_location_assignment PIN_J9 -to g_out[0]
+set_location_assignment PIN_J10 -to g_out[1]
+set_location_assignment PIN_H12 -to g_out[2]
+set_location_assignment PIN_G10 -to g_out[3]
+set_location_assignment PIN_G11 -to g_out[4]
+set_location_assignment PIN_G12 -to g_out[5]
+set_location_assignment PIN_F11 -to g_out[6]
+set_location_assignment PIN_E11 -to g_out[7]
+set_location_assignment PIN_B13 -to b_out[0]
+set_location_assignment PIN_G13 -to b_out[1]
+set_location_assignment PIN_H13 -to b_out[2]
+set_location_assignment PIN_F14 -to b_out[3]
+set_location_assignment PIN_H14 -to b_out[4]
+set_location_assignment PIN_F15 -to b_out[5]
+set_location_assignment PIN_G15 -to b_out[6]
+set_location_assignment PIN_J14 -to b_out[7]
+set_location_assignment PIN_AA14 -to btn_left_right
+set_location_assignment PIN_AA15 -to btn_up_down
+set_location_assignment PIN_W15 -to btn_flag
+set_location_assignment PIN_Y16 -to btn_select
+set_location_assignment PIN_AF10 -to bombas[3]
+set_location_assignment PIN_AF9 -to bombas[2]
+set_location_assignment PIN_AC12 -to bombas[1]
+set_location_assignment PIN_AB12 -to bombas[0]
+set_location_assignment PIN_AE12 -to esBomba
+set_location_assignment PIN_AD10 -to initButton
+set_location_assignment PIN_AC9 -to reset
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

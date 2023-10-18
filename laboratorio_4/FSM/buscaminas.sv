@@ -5,7 +5,8 @@ module buscaminas (
   input [2:0] y,
   input logic esBomba,
   input logic initButton,
-  output estado
+  output estado,
+  output logic wr_enable
 );
 
 reg [3:0]matriz_bombas [7:0][7:0];
@@ -44,6 +45,7 @@ always @(*)
 begin
 
 //ESTADO DE BOMBA    0--NADA,1-9--NUMERO DE BOMBAS ADYACENTES, 10-BOMBA MARCADA,11-BOMBA
+		wr_enable <= 0;
       case (estado_actual)
         2'b00: // ESTADO INICIAL
 		  begin
@@ -61,6 +63,7 @@ begin
 				if(esBomba)begin
 					$display("ES BOMBA Y LA MARCO");
 					matriz_bombas[x][y]= 10;
+					wr_enable <= 1;
 					estado_siguiente=2'b01;
 				end
 				else begin
@@ -76,6 +79,7 @@ begin
 				else begin
 					$display("NO ES BOMBA Y LA MARCO");
 					matriz_bombas[x][y]= 10;
+					wr_enable <= 1;
 					estado_siguiente=2'b01;
 					end
          end
