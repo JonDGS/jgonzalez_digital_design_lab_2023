@@ -40,7 +40,7 @@ module logic_buscaminas (
   
 //verBombas bombasAd (.matriz_bombas(matriz),.x(cursor_x),.y(cursor_y), .bombasAdyacentes(bombasAdyacentes));
 
-// Lógica para cambiar al estado 0010 (posible bomba) al presionar el botón de la bandera
+//Lógica para cambiar al estado 0010 (posible bomba) al presionar el botón de la bandera
 always_ff @(posedge clk or posedge rst) begin
   if (rst) begin
     // Inicializaciones cuando se reinicia el juego.
@@ -56,7 +56,6 @@ end
 //Asignar el estado actual
 assign estado = estado_actual;
 endmodule
-
 
 module verBombas (input [3:0]matriz_bombas [7:0][7:0],input [2:0] x,input [2:0] y, output logic [2:0]bombasAdyacentes);
 always @(*)begin

@@ -5,7 +5,7 @@ module movimiento_tb;
 
   // Señales de reloj
   reg clk = 0;
-  always #(CLK_PERIOD/2) clk = ~clk;
+  always #(CLK_PERIOD/10) clk = ~clk;
 
   // Señales de control
   reg rst;
@@ -61,8 +61,6 @@ module movimiento_tb;
 
     $display("Numero total de movimientos en X: %d", move_count_x);
     $display("Numero total de movimientos en Y: %d", move_count_y);
-
-    #50 $finish;
   end
 
 endmodule
