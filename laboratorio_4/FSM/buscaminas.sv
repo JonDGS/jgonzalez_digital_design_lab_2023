@@ -42,14 +42,11 @@ always_ff @(posedge clk or posedge rst)
 
 always @(*)
 begin
-$display("matriz_bombas SELECCIONADA[%0d][%0d] = %d", x,y, matriz_bombas[x][y]);
-$display("ESTADO DE LA MAQUINA: %b",estado_actual);
 
 //ESTADO DE BOMBA    0--NADA,1-9--NUMERO DE BOMBAS ADYACENTES, 10-BOMBA MARCADA,11-BOMBA
       case (estado_actual)
         2'b00: // ESTADO INICIAL
 		  begin
-		  $display("CAMBIO DE LA MAQUINA: %b",estado_actual);
          if(initButton)
 			begin
 				estado_siguiente=2'b01;
@@ -59,32 +56,31 @@ $display("ESTADO DE LA MAQUINA: %b",estado_actual);
         end
         2'b01: // ESTADO JUGANDO 
 		  begin
-		  $display("CAMBIO DE LA MAQUINA: %b",estado_actual);
          if(matriz_bombas[x][y]==11 )begin
 			
 				if(esBomba)begin
 					$display("ES BOMBA Y LA MARCO");
 					matriz_bombas[x][y]= 10;
+					estado_siguiente=2'b01;
 				end
 				else begin
-					$display("BOMBA Y NO MARCADA===MAMO");
+					$display("BOMBA Y NO MARCADA===PERDIO");
 					estado_siguiente=2'b11;end
 				end
 			else
 				if(!esBomba)begin
 					$display("NO ES BOMBA Y NO MARCADA");
 					
-					
 					estado_siguiente=2'b01;
 					end
 				else begin
-					$display("NO ES BOMBA Y NO MARCADA");
+					$display("NO ES BOMBA Y LA MARCO");
 					matriz_bombas[x][y]= 10;
+					estado_siguiente=2'b01;
 					end
          end
         2'b10: // ESTADO GANO
 		  begin
-		  $display("CAMBIO DE LA MAQUINA: %b",estado_actual);
 			estado_siguiente=2'b10;
         end
         2'b11: // ESTADO PERDIO
