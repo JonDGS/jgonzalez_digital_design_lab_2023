@@ -21,7 +21,7 @@ module main(
 				
 				assign code = matrix[cursor_x][cursor_y];
 				
-				logic_buscaminas lb(vga_clk, reset, esBomba, initButton, btn_up_down, btn_left_right, btn_flag, btn_select, bombas, cursor_x, cursor_y, wr_enable);
+				logic_buscaminas lb(vga_clk, reset, esBomba, initButton,matrix, btn_up_down, btn_left_right, btn_flag, btn_select, bombas, cursor_x, cursor_y, wr_enable);
 				
 				random_matrix rm(bombas, matrix);
 				

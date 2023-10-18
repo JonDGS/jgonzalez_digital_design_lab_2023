@@ -3,6 +3,7 @@ module logic_buscaminas (
   input rst,
   input logic esBomba,
   input logic initButton,
+  input reg [3:0] matriz_input [7:0][7:0],
   input logic btn_up_down,
   input logic btn_left_right,
   input logic btn_flag,
@@ -13,14 +14,19 @@ module logic_buscaminas (
   output logic wr_enable
 );
 
-  reg [3:0] matriz [7:0][7:0];
-  //logic [1:0] estado_actual, estado_siguiente;
+  //reg [3:0] matriz [7:0][7:0];
+  logic [1:0] estado_actual, estado_siguiente;
+  
   reg [2:0] bombasAdyacentes;
   logic wr_enable0;
   logic wr_enable1;
+  reg [3:0]matriz [7:0][7:0];
   
   assign wr_enable = wr_enable0 && wr_enable1;
   
+initial begin
+matriz<= matriz_input;
+end
   // Instancia del módulo buscaminas
   buscaminas fsm_inst(
     .clk(clk),
@@ -29,6 +35,7 @@ module logic_buscaminas (
     .y(cursor_y),
     .esBomba(esBomba),
     .initButton(initButton),
+	 .matriz(matriz),
     .estado(estado_actual),
 	 .wr_enable(wr_enable0)
   );
@@ -51,10 +58,10 @@ module logic_buscaminas (
 always_ff @(posedge clk or posedge rst) begin
   if (rst) begin
     // Inicializaciones cuando se reinicia el juego.
-    estado_actual <= 2'b00;
+    //estado_actual <= 2'b00;
   end else if (btn_flag && matriz[cursor_x][cursor_y] == 4'b0011) begin
     // Cambiar al estado 0010 (posible bomba) cuando se presiona el botón de la bandera
-    estado_actual <= 2'b10;
+    //estado_actual <= 2'b10;
   end else if (matriz[cursor_x][cursor_y] == 4'b0000)begin
 		matriz[cursor_x][cursor_y] = bombasAdyacentes;
 		wr_enable1 <= 1;

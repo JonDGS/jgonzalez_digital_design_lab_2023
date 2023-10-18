@@ -5,15 +5,20 @@ module buscaminas (
   input [2:0] y,
   input logic esBomba,
   input logic initButton,
+  input reg [3:0]matriz [7:0][7:0],
   output estado,
   output logic wr_enable
 );
 
-reg [3:0]matriz_bombas [7:0][7:0];
+//reg [3:0]matriz_bombas [7:0][7:0];
 logic [1:0] estado_actual,estado_siguiente;
+reg [3:0]matriz_bombas [7:0][7:0];
 
+initial begin
+matriz_bombas<= matriz;
+end
 
-
+/*
 initial begin
 	for (int i = 0; i < 8; i++) begin
 		for (int j = 0; j < 8; j++) begin
@@ -23,7 +28,7 @@ initial begin
 			 matriz_bombas[i][j] = 0;
 		  end
 	end
-end
+end*/
 
 always @(*)begin
 for (int i = 0; i < 8; i++) begin
