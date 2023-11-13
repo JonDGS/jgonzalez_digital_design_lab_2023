@@ -1,10 +1,12 @@
+`timescale 1 ps / 1 ps
 module top_tb();
 	logic clk;
 	logic reset;
 	logic [31:0] WriteData, DataAdr;
 	logic MemWrite;
+	logic [2:0] btn;
 	// instantiate device to be tested
-	top dut(clk, reset, WriteData, DataAdr, MemWrite);
+	top dut(clk, reset, btn,WriteData, DataAdr, MemWrite);
 	// initialize test
 	initial
 	begin
@@ -19,8 +21,9 @@ module top_tb();
 	// at end of program
 	always @(negedge clk)
 	begin
+		btn<=3'b110;
 		if(MemWrite) begin
-			if(DataAdr === 100 & WriteData === 7) begin
+			if(DataAdr === 6 & WriteData === 9) begin
 				$display("Simulation succeeded");
 				$stop;
 			end else if (DataAdr !== 96) begin
