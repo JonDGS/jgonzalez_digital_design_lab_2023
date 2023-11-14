@@ -1,7 +1,7 @@
 module write_mem (input [2:0]btn,
 						output reg enable,
-						output reg [15:0] adrr,
-						output reg [15:0] data);
+						output reg [7:0] adrr,
+						output reg [7:0] data);
 	
 	always @(btn) begin
 		case(btn)
