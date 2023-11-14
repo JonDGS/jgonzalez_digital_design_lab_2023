@@ -5,7 +5,7 @@ module top_tb();
 	logic [31:0] WriteData, DataAdr;
 	logic MemWrite;
 	// instantiate device to be tested
-	top dut(clk, reset,WriteData, DataAdr, MemWrite);
+	top dut(clk, reset, WriteData, DataAdr, MemWrite);
 	// initialize test
 	initial
 	begin
@@ -16,19 +16,18 @@ module top_tb();
 	begin
 		clk <= 1; # 5; clk <= 0; # 5;
 	end
-	
-	// check that 7 gets written to address 0x64
+		
+		// check that 7 gets written to address 0x64
 	// at end of program
 	always @(negedge clk)
 	begin
-	$display("ANTES DEL IF, ADDRESS: %d  DATA: %d MEMWRITE: %d",DataAdr,WriteData,MemWrite );
 		if(MemWrite) begin
-		if(DataAdr === 100 & WriteData === 7) begin
-			$display("Simulation succeeded, ADDRESS: %d  DATA: %d",DataAdr,WriteData );
-			$stop;
-		end else if (DataAdr !== 96) begin
-			$display("Simulation failed, ADDRESS: %d  DATA: %d",DataAdr,WriteData );
-			$stop;
+			if(DataAdr === 100 & WriteData === 7) begin
+				$display("Simulation succeeded, ADDRESS: %d  DATA: %d",DataAdr,WriteData );
+				$stop;
+			end else if (DataAdr !== 96) begin
+				$display("Simulation failed, ADDRESS: %d  DATA: %d",DataAdr,WriteData );
+				$stop;
 			end
 		end
 	end

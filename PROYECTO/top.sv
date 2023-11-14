@@ -1,5 +1,5 @@
 module top(input logic clk, reset,
-output logic [15:0] WriteData, DataAdr,
+output logic [7:0] WriteData, DataAdr,
 output logic MemWrite);
 
 	logic [31:0] PC, Instr,ReadData;
