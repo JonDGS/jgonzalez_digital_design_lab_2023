@@ -4,11 +4,15 @@ module top_tb();
 	logic reset;
 	logic [31:0] WriteData, DataAdr;
 	logic MemWrite;
+	logic [2:0]btn;
+	logic sel;
 	// instantiate device to be tested
-	top dut(clk, reset, WriteData, DataAdr, MemWrite);
+	top dut(clk, reset,sel,btn, WriteData, DataAdr, MemWrite);
 	// initialize test
 	initial
 	begin
+		btn<=3'b110;
+		sel<=1'b0;
 		reset <= 1; # 22; reset <= 0;
 	end
 	// generate clock to sequence tests
@@ -22,6 +26,7 @@ module top_tb();
 	always @(negedge clk)
 	begin
 		if(MemWrite) begin
+			
 			if(DataAdr === 100 & WriteData === 7) begin
 				$display("Simulation succeeded, ADDRESS: %d  DATA: %d",DataAdr,WriteData );
 				$stop;
