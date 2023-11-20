@@ -4,7 +4,7 @@ module vga(
 			  output logic hsync, vsync,
 			  output logic sync_b, blank_b,
 			  output logic unsigned [7:0] r_out, g_out, b_out,
-			  output reg [15:0] readAddress = 0
+			  output reg [15:0] readAddress
 			  );
 	
 	pll vgapll(clk, vgaclk);
@@ -21,8 +21,8 @@ module vga(
 	
 	vgaController vgaCont(vgaclk, hsync, vsync, sync_b, blank_b, x, y);
 	
-	vgaMatrix #(200) vgaMx(x, y, pixelValue, readAddress, r_out, g_out, b_out);
+	vgaMatrix #(200) vgaMx(vgaclk, x, y, pixelValue, readAddress, r_out, g_out, b_out);
 	
-	ram1 videomemory (.address(readAddress), .clock(vgaclk), .wren(0), .q(pixelValue));
+	ram1 videomemory (.address(readAddress+2), .clock(vgaclk), .wren(0), .q(pixelValue));
 	
 endmodule

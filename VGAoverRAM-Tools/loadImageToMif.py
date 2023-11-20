@@ -20,26 +20,28 @@ with open('ram_data1.mif', 'w') as f:
     
     lastEqual = 0;
     lastEval = 0;
+    
+    f.write('    0 : 0;\n')
 
     # Write pixel values
     for i, pixel in enumerate(img_array.flat):
         if i == img_array.size-1:
             if lastEqual == i:
-                f.write('    %d : %d;\n' % (i, pixel))
+                f.write('    %d : %d;\n' % (i+1, pixel))
             else:
-                f.write('    [%d..%d] : %d;\n' % (lastEqual, i, pixel))
+                f.write('    [%d..%d] : %d;\n' % (lastEqual+1, i+1, pixel))
             lastEqual = i;
         elif i == lastEqual:
             if pixel == img_array.flat[i+1]:
                 continue
             else:
                 lastEqual = i + 1
-                f.write('    %d : %d;\n' % (i, pixel))
+                f.write('    %d : %d;\n' % (i+1, pixel))
         else:
             if pixel == img_array.flat[i+1]:
                 continue
             else:
-                f.write('    [%d..%d] : %d;\n' % (lastEqual, i, pixel))
+                f.write('    [%d..%d] : %d;\n' % (lastEqual+1, i+1, pixel))
                 lastEqual = i + 1
 
     # Write footer
