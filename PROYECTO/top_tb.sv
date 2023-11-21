@@ -27,7 +27,7 @@ module top_tb();
 	begin
 		if(MemWrite) begin
 			
-			if(DataAdr === 100 & WriteData === 7) begin
+			if(DataAdr === 96 & WriteData === 7) begin
 				$display("Simulation succeeded, ADDRESS: %d  DATA: %d",DataAdr,WriteData );
 				$stop;
 			end else if (DataAdr !== 96) begin

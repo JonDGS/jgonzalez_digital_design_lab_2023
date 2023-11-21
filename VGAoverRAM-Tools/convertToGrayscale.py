@@ -1,8 +1,8 @@
 from PIL import Image
 import numpy as np
 
-n = 200
-m = 200
+n = 100
+m = 100
 
 # Load image
 img = Image.open('image.png')

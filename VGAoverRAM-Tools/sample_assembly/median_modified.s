@@ -1,11 +1,11 @@
 // Define the starting addresses for the image, filtered image, and kernel
-image_start: .word 0x1000 // Replace with the actual starting address of the image
-filtered_image_start: .word 0x2000 // Replace with the desired starting address for the filtered image
-kernel_start: .word 0x3000 // Replace with the actual starting address of the kernel
+image_start: .word 0x0001 // Replace with the actual starting address of the image
+filtered_image_start: .word 0x2711 // Replace with the desired starting address for the filtered image
+kernel_start: .word 0x4e23 // Replace with the actual starting address of the kernel
 
 // Define constants for width and height
-width: .word 3
-height: .word 3
+width: .word 100
+height: .word 100
 
 // Define the kernel as a 3x3 matrix
 kernel:  .word 0, 1, 0
