@@ -5,7 +5,7 @@ logic clk;
 initial
 
 //CAMBIAR DIRECCION DEL ARCHIVO ========================
-$readmemh("C:/Users/sergi/Desktop/TEC/2023/2/TALLER/LABS/GIT/jgonzalez_digital_design_lab_2023/PROYECTO/memfile.dat",RAM);
+$readmemh("E:/Utilities/Documents/Github/jgonzalez_digital_design_lab_2023/PROYECTO/memfile_median_modified.dat",RAM);
 //CAMBIAR DIRECCION DEL ARCHIVO ========================
 
 assign rd = RAM[a[31:2]]; // word aligned

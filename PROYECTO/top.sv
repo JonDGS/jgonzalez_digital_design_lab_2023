@@ -19,6 +19,4 @@ output logic MemWrite);
 	
 	//write_mem wmem (btn,wren, addr_wr,data_wr);
 	
-	
-	
 endmodule
