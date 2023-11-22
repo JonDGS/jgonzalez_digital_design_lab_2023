@@ -10,7 +10,7 @@ VSYN = 10'd2,
 VMAX = VACTIVE + VFP + VSYN + VBP)
 (input logic vgaclk,
 output logic hsync, vsync, sync_b, blank_b,
-output reg rst,
+output reg rst = 0,
 output logic hold,
 output reg [9:0] x, y);
 
@@ -43,6 +43,6 @@ assign vsync = ~(y >= VACTIVE + VFP & y < VACTIVE + VFP + VSYN); // Cambio de vc
 assign sync_b = hsync & vsync;
 // Force outputs to black when outside the legal display area
 assign blank_b = (x < HACTIVE) & (y < VACTIVE); // Cambio de hcnt y vcnt a x y y
-assign hold = ~((x > 269 & x < 371) && (y > 189 & y < 291));
+assign hold = ~((x > 269 & x < 370) && (y > 189 & y < 290));
 
 endmodule

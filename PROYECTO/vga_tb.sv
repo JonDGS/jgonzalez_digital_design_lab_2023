@@ -3,7 +3,7 @@
 module vga_tb();
 
 	logic clk = 0;
-	logic vga_clk = 0;
+	logic vga_clk;
 	logic Hsync;
 	logic Vsync;
 	logic VGA_Sync;
