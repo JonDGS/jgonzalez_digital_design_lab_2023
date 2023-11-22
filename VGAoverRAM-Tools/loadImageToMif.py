@@ -30,7 +30,7 @@ def write_mif_file(img_array, filename, offset=0):
             f.write('END;\n')
 
 # Load image in grayscale
-img = Image.open('filtered_image.png').convert('L')
+img = Image.open('laplace_filtered_image.png').convert('L')
 
 # Convert image to numpy array
 img_array = np.array(img)

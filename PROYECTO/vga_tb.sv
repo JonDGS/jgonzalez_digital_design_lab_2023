@@ -11,11 +11,12 @@ module vga_tb();
 	logic [7:0] Red;
 	logic [7:0] Green;
 	logic [7:0] Blue;
-	logic [15:0] readAddress;
+	logic [15:0] readAddress, posoffset;
 	logic rst;
 	logic hold;
+	logic switch = 1;
 	
-	vga v (clk, vga_clk, Hsync, Vsync, VGA_Sync, VGA_Blank, Red, Green, Blue, readAddress, rst, hold);
+	vga v (clk, vga_clk, Hsync, Vsync, VGA_Sync, VGA_Blank, Red, Green, Blue, readAddress, posoffset, rst, hold, switch);
 	
 	always #5 clk = ~clk;
 	
