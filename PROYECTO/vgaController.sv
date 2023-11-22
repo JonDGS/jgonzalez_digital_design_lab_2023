@@ -10,6 +10,8 @@ VSYN = 10'd2,
 VMAX = VACTIVE + VFP + VSYN + VBP)
 (input logic vgaclk,
 output logic hsync, vsync, sync_b, blank_b,
+output reg rst,
+output logic hold,
 output reg [9:0] x, y);
 
 initial begin
@@ -21,10 +23,16 @@ end
 // counters for horizontal and vertical positions
 always @(posedge vgaclk) begin
 	x++;
+	if (rst == 1) begin
+		rst <= 0;
+	end
 	if (x == HMAX) begin
 		x = 0;
 		y++;
-	if (y == VMAX) y = 0;
+	end
+	if (y == VMAX) begin
+		y = 0;
+		rst <= 1;
 	end
 	
 end
@@ -35,5 +43,6 @@ assign vsync = ~(y >= VACTIVE + VFP & y < VACTIVE + VFP + VSYN); // Cambio de vc
 assign sync_b = hsync & vsync;
 // Force outputs to black when outside the legal display area
 assign blank_b = (x < HACTIVE) & (y < VACTIVE); // Cambio de hcnt y vcnt a x y y
+assign hold = ~((x > 269 & x < 371) && (y > 189 & y < 291));
 
 endmodule
